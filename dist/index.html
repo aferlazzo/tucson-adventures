@@ -10,11 +10,18 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/" data-home>Tucson Adventures</a>
-    <span class="tagline">The strange decisions Tucson makes for you.</span>
+    <div class="header-inner">
+      <div>
+        <a class="brand" href="/" data-home>Tucson Adventures</a>
+        <span class="tagline">The strange decisions Tucson makes for you.</span>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/about/" data-about>About</a>
+      </nav>
+    </div>
   </header>
   <main id="app" tabindex="-1"></main>
-  <footer>Made in Tucson—with sunshine, imagination, and deferred maintenance.</footer>
+  <footer>Made in Tucson—with sunshine, imagination, and deferred maintenance. <a href="/about/" data-about>About</a></footer>
   <script src="/more-adventures.js" defer></script>
   <script src="/app.js" defer></script>
 </body>
