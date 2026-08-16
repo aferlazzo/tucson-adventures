@@ -1,0 +1,449 @@
+"use strict";
+
+const adventure4 = {
+  slug: "the-wash-woke-up",
+  title: "The Wash Woke Up",
+  subtitle: "A blue sky, one grocery run, and a wash that remembers it is a river.",
+  scenes: [
+    {
+      title: "Ten Minutes to Fry's",
+      body: `<p>You leave for a ten-minute grocery run beneath a perfectly blue Tucson sky.</p><p>Seven minutes later, rain is moving sideways. Your phone announces a dust warning while water begins crossing the road ahead.</p><p>A handwritten sign beside the wash reads:</p><div class="sign">ROAD MAY FLOOD<br><small>Road currently considering it</small></div><p>The railroad crossing behind you closes.</p>`,
+      question: "What do you do?",
+      choices: [
+        ["A","Turn around before the water rises.","The train blocks your retreat. The wash rises another inch and appears pleased with itself."],
+        ["B","Wait on high ground and watch the crossing.","Other drivers line up behind you. One honks, apparently believing your sedan controls both weather and freight rail."],
+        ["C","Follow a pickup through the shallow-looking water.","The pickup clears it. Your smaller car reaches the edge just as a trash bin floats past like a warning buoy."],
+        ["D","Open navigation and find another route.","The app recommends a road named Dry River Lane. Even the app pauses before saying it aloud."]
+      ], next: 1
+    },
+    {
+      title: "The New Riverfront District",
+      body: `<p>Water spreads across the intersection. A city crew arrives and places one cone where forty would be useful.</p><p>A television reporter calls the scene “unexpected flooding.” Three longtime residents simultaneously shout, “It's a wash.”</p><p>A stranded driver says his dog is waiting at home. Another car contains melting groceries and a birthday cake reading CONGRATULATIONS ON STAYING DRY.</p>`,
+      question: "Where do you help first?",
+      choices: [
+        ["A","Move everyone farther uphill.","People cooperate once the birthday cake begins drifting inside its box."],
+        ["B","Call emergency services about the stranded cars.","Dispatch already knows. The wash has generated more calls than the county budget meeting."],
+        ["C","Use your car to block impatient drivers.","You become an unofficial barricade. The honking driver promotes you to Acting Mayor of Rain."],
+        ["D","Record the flooding and road signs.","Your video captures a storm drain ejecting a traffic cone. The cone immediately rejoins city service downstream."]
+      ], next: 2
+    },
+    {
+      title: "Do Not Enter When Flooded",
+      body: `<p>A delivery van ignores everyone and enters the water. It stalls halfway across.</p><p>The driver climbs onto the roof and announces that the package was guaranteed by 5:00.</p><p>Firefighters are approaching, but a loose dumpster is moving toward the van. Nobody should enter the current.</p>`,
+      question: "What is the safest useful action?",
+      choices: [
+        ["A","Warn the driver and let firefighters handle the rescue.","The driver stays on the roof. The dumpster changes lanes without signaling."],
+        ["B","Throw a rope from shore.","A firefighter stops you before the rope turns two people into a rescue instead of one."],
+        ["C","Move bystanders away from the channel.","The crowd backs up just before the dumpster bumps the van and continues toward Phoenix."],
+        ["D","Ask what is inside the guaranteed package.","“Pool noodles,” the driver says. Tucson has achieved perfect comic timing." ]
+      ], next: 3
+    },
+    {
+      title: "After the Water",
+      body: `<p>The rain stops as abruptly as it began. Firefighters bring the driver to shore. The wash drops, leaving mud, branches, and the original city cone lying sideways in victory.</p><p>A council representative arrives for photographs and announces a comprehensive review of signs that already say not to drive into flooded roads.</p>`,
+      question: "What should the neighborhood demand?",
+      choices: [
+        ["A","A real gate that closes before flooding.","Officials call a gate technologically ambitious. Residents point toward the railroad crossing."],
+        ["B","Better drainage and wash maintenance.","The city discovers maintenance requests dating back far enough to qualify as historical documents."],
+        ["C","A public alert tied to the actual road.","The proposed alert says WATER HERE NOW, which tests better than HYDROLOGICAL EVENT POSSIBLE."],
+        ["D","Nothing; the warning signs were clear.","The signs were clear. The driver was clearer about same-day delivery." ]
+      ], next: 4
+    },
+    {
+      title: "The Grocery Run",
+      body: `<p>The road reopens three hours later. Fry's is still seven minutes away. Your grocery list is now damp, the birthday cake has survived, and the delivery driver has offered everyone a pool noodle.</p>`,
+      question: "How does the neighborhood remember the storm?",
+      final: true,
+      choices: [
+        ["A","Install the automatic flood gate.","The gate closes during the next monsoon before the first impatient driver arrives.","The Wash Gets Boundaries","Tucson installs infrastructure before making the commemorative plaque."],
+        ["B","Adopt the pool noodles as warning markers.","Bright noodles appear on every flood sign in the neighborhood.","The Noodle Alert System","It is ridiculous, visible, and therefore more effective than the old plan."],
+        ["C","Name the surviving traffic cone.","Cone-stance becomes a local weather celebrity.","Cone-stance Holds the Line","She has no authority and a better approval rating than most committees."],
+        ["D","Finish the grocery run.","You arrive home with milk, bread, and a story nobody outside Tucson believes.","Ten Minutes, Tucson Time","The receipt says 4:52 P.M. Your watch declines comment."]
+      ]
+    }
+  ]
+};
+
+const adventure5 = {
+  slug: "the-javelina-valet",
+  title: "The Javelina Valet Service",
+  subtitle: "A tipped trash cart becomes a wildlife operation with surprisingly firm parking rules.",
+  scenes: [
+    {
+      title: "Trash Night",
+      body: `<p>At 5:40 A.M., every trash cart on your street has been moved into one perfect line across the road.</p><p>Behind them stands a family of javelinas eating the contents of Tuesday.</p><p>The largest javelina wears a reflective HOA parking sticker on its ear.</p>`,
+      question: "What do you do first?",
+      choices: [
+        ["A","Stay inside and observe.","The javelina moves your neighbor's cart two inches and appears satisfied with the alignment."],
+        ["B","Use the car horn to scare them away.","The family scatters, then returns with the offended confidence of residents who pay dues."],
+        ["C","Call animal control.","The recording advises you not to feed or approach wildlife. It does not address wildlife enforcing parking."],
+        ["D","Photograph the sticker.","The number belongs to a parking permit reported missing from the HOA office last week." ]
+      ], next: 1
+    },
+    {
+      title: "The New Parking Committee",
+      body: `<p>By sunrise, the javelinas have relocated six carts, two patio cushions, and a plastic flamingo.</p><p>Every item was previously in violation of some HOA rule.</p><p>The board president arrives and whispers, “They cleared our entire complaint backlog.”</p>`,
+      question: "How should the neighborhood respond?",
+      choices: [
+        ["A","Secure the trash and remove the food source.","Without breakfast, the committee begins inspecting decorative gravel."],
+        ["B","Let them finish the violations.","They cite a pickup truck by rubbing mud across its windshield."],
+        ["C","Find out how the sticker reached the javelina.","Security video shows the board president dropping it while chasing a rolling recycle bin."],
+        ["D","Warn neighbors to keep their distance.","The message spreads quickly, except one resident who replies ALL CAPS that javelinas are technically peccaries." ]
+      ], next: 2
+    },
+    {
+      title: "The Golf Cart Incident",
+      body: `<p>A landscaping golf cart arrives. The driver leaves it running while moving a branch.</p><p>The largest javelina bumps the accelerator. The cart rolls slowly toward the community pool with three smaller javelinas trotting behind it.</p>`,
+      question: "How do you stop the slowest pursuit in Tucson?",
+      choices: [
+        ["A","Tell the driver to cut power remotely.","He removes the key fob from his pocket. The cart stops beside the No Animals sign."],
+        ["B","Run alongside and grab the brake.","You reconsider after the passenger huffs. Your fitness goal survives for another day."],
+        ["C","Open the pool gate as an escape route.","That solves a problem nobody currently has and creates three new ones."],
+        ["D","Block the cart with empty trash bins.","The bins work. The javelina looks impressed by your command of municipal equipment." ]
+      ], next: 3
+    },
+    {
+      title: "A Humane Transition of Power",
+      body: `<p>The cart is stopped and nobody is hurt. Wildlife officers advise removing food, securing carts, and giving the family space to leave.</p><p>The board president wants to keep the sticker on the javelina because violation reports are down 80 percent.</p>`,
+      question: "What policy does the neighborhood adopt?",
+      choices: [
+        ["A","Wildlife-proof trash carts for everyone.","The board objects to the cost until residents compare it with the decorative fountain nobody requested."],
+        ["B","Earlier trash pickup.","The contractor offers 4:30 A.M., a time previously occupied only by coyotes and regret."],
+        ["C","Fine residents who attract wildlife.","The first citation goes to the HOA dumpster."],
+        ["D","Appoint a human parking committee.","Nobody volunteers. The javelina remains the leading candidate." ]
+      ], next: 4
+    },
+    {
+      title: "Permit Returned",
+      body: `<p>With food secured, the javelina family leaves through the wash. The reflective sticker falls beside the pool gate.</p>`,
+      question: "How does the episode end?",
+      final: true,
+      choices: [
+        ["A","Install wildlife-proof carts.","Trash morning becomes boring again.","The Buffet Closes","The neighborhood misses the drama but not the smell."],
+        ["B","Frame the recovered permit.","It hangs in the clubhouse under EXEMPLARY SERVICE.","Employee of the Month","The honoree cannot attend due to foraging commitments."],
+        ["C","Keep one cart out as a test.","It is overturned before dawn by an ordinary raccoon.","Management Changes","The new contractor works nights."],
+        ["D","Retire the parking rule entirely.","The street survives crooked carts and gains several hours of human life.","Natural Deregulation","The javelina accomplished what three annual meetings could not." ]
+      ]
+    }
+  ]
+};
+
+const adventure6 = {
+  slug: "the-crossing-that-would-not-open",
+  title: "The Crossing That Wouldn't Open",
+  subtitle: "One freight train, two meetings, and Cortaro Road's longest unofficial neighborhood gathering.",
+  scenes: [
+    {
+      title: "Just One Train",
+      body: `<p>You approach the Cortaro Road railroad crossing as the gates lower.</p><p>The freight train stops after car 73. Then it backs up. Then it moves forward exactly far enough to inspire hope.</p><p>Your navigation app changes your arrival time from 9:02 to “emotionally unavailable.”</p>`,
+      question: "What do you do?",
+      choices: [
+        ["A","Wait; it will move eventually.","Eventually applies for an extension."],
+        ["B","Turn around for another crossing.","Every car behind you has formed a defensive treaty."],
+        ["C","Check traffic reports.","The report says MINOR DELAY, apparently written from orbit."],
+        ["D","Call the meeting organizer.","She says not to worry; half the meeting is behind the same train." ]
+      ], next: 1
+    },
+    {
+      title: "The Parking Lot Forms",
+      body: `<p>After twenty minutes, drivers turn off their engines. A coffee truck trapped in the line opens for business.</p><p>Someone unfolds a lawn chair. A child starts counting train cars and reaches a number the school has not taught yet.</p><p>A man claims there is a secret route through a nearby warehouse lot.</p>`,
+      question: "Which escape plan do you trust?",
+      choices: [
+        ["A","Stay put and buy coffee.","The coffee truck introduces surge pricing at minute thirty."],
+        ["B","Follow the warehouse shortcut.","The route ends at another locked gate with a clearer view of the same train."],
+        ["C","Coordinate a safe turnaround.","Drivers reverse in order, briefly demonstrating more transportation planning than anyone expected."],
+        ["D","Walk toward the front for information.","The locomotive is visible in the distance, as is a crew member eating a sandwich with no sense of urgency." ]
+      ], next: 2
+    },
+    {
+      title: "The Meeting Comes to You",
+      body: `<p>The stranded meeting organizer climbs onto the coffee truck.</p><p>“Since everyone is here,” she announces, “we may as well begin.”</p><p>The meeting topic is regional transportation.</p><p>People laugh long enough to become a quorum.</p>`,
+      question: "What issue goes first on the agenda?",
+      choices: [
+        ["A","Build an overpass or underpass.","Officials cite a study. Three drivers produce older studies from their glove compartments."],
+        ["B","Publish real-time train blockage data.","The railroad representative says location data is complex while standing beside a train nobody can fail to locate."],
+        ["C","Limit how long crossings stay blocked.","Everyone supports the idea except the sandwich."],
+        ["D","Move all meetings to the crossing.","Attendance projections rise immediately." ]
+      ], next: 3
+    },
+    {
+      title: "Movement Detected",
+      body: `<p>The train finally moves. The crowd cheers—then notices the gates remain down.</p><p>A maintenance truck arrives. The technician opens a control box and removes a bird nest built directly on the sensor.</p>`,
+      question: "What deserves the blame?",
+      choices: [
+        ["A","The train operations.","The railroad promises to review procedures during a meeting reachable only by crossing the tracks."],
+        ["B","The neglected sensor.","Maintenance records show it was scheduled for inspection next fiscal decade."],
+        ["C","The bird.","The bird has already retained counsel."],
+        ["D","The road design.","The road quietly points toward the stack of overpass studies." ]
+      ], next: 4
+    },
+    {
+      title: "Gates Up",
+      body: `<p>The gates rise after 58 minutes. Nobody remembers where they were going, but the transportation meeting has minutes, coffee receipts, and unanimous recommendations.</p>`,
+      question: "What changes afterward?",
+      final: true,
+      choices: [
+        ["A","Fund the grade-separated crossing.","Construction begins after the newest study confirms the previous six.","The Road Escapes","Cortaro finally stops scheduling life around freight."],
+        ["B","Install reliable blockage alerts.","Phones now say 43-MINUTE DELAY instead of MINOR.","Accurate Misery","Nobody is happier, but everyone leaves earlier."],
+        ["C","Protect and relocate the bird nest.","The bird receives a platform away from the sensor.","Transit-Oriented Wildlife","It remains the only resident with direct track access."],
+        ["D","Keep the coffee truck stationed nearby.","It becomes the most profitable transportation project on Cortaro Road.","The Cortaro Café","Every tenth delay earns a free pastry." ]
+      ]
+    }
+  ]
+};
+
+const adventure7 = {
+  slug: "the-gem-show-ate-downtown",
+  title: "The Gem Show Ate Downtown",
+  subtitle: "A harmless mineral purchase expands into a temporary international government.",
+  scenes: [
+    {
+      title: "Just Looking",
+      body: `<p>You enter the Tucson Gem Show intending to spend twenty dollars and leave within an hour.</p><p>Three tents later, you own a twelve-pound amethyst, cannot locate the exit, and have crossed into a wholesale district requiring credentials.</p><p>A vendor asks whether you represent a sovereign buyer.</p>`,
+      question: "How do you respond?",
+      choices: [
+        ["A","Admit you are lost.","The vendor gives directions using minerals as landmarks."],
+        ["B","Say you represent your household.","He issues you a provisional purchasing badge for the Republic of Guest Bedroom."],
+        ["C","Follow signs back downtown.","Every sign says MORE VENDORS."],
+        ["D","Call a rideshare.","The driver is 400 feet away and estimates arrival in 37 minutes." ]
+      ], next: 1
+    },
+    {
+      title: "The Missing Shuttle",
+      body: `<p>The official shuttle stop has moved because its former location is now a fossil marketplace.</p><p>A volunteer hands you a map printed before three tents achieved statehood.</p><p>Your amethyst has become heavier through a process unknown to geology.</p>`,
+      question: "How do you escape?",
+      choices: [
+        ["A","Board the first shuttle.","It takes you to another show containing larger rocks."],
+        ["B","Trade the amethyst for directions.","The vendor offers directions plus two smaller amethysts."],
+        ["C","Use the mountains for orientation.","Every reflective display creates a new mountain."],
+        ["D","Ask a local food vendor.","She marks the real exit and sells you a Sonoran hot dog for emergency strength." ]
+      ], next: 2
+    },
+    {
+      title: "Customs at Tent 43",
+      body: `<p>You reach a checkpoint. Your household badge now contains stamps from Brazil, Morocco, and a parking garage.</p><p>An organizer explains that downtown traffic has collapsed because one unauthorized tent was erected across the shuttle lane.</p>`,
+      question: "What can you contribute?",
+      choices: [
+        ["A","Help move the unauthorized tent.","Its owner agrees after learning the tent is technically in a bus lane and possibly Nevada."],
+        ["B","Direct trapped visitors toward the exit.","You become trusted because you look equally desperate."],
+        ["C","Report the blockage to the city.","The city asks for the tent's parcel number."],
+        ["D","Declare the tent an independent municipality.","It immediately applies for tourism funding." ]
+      ], next: 3
+    },
+    {
+      title: "The Twenty-Dollar Budget",
+      body: `<p>The shuttle lane reopens. Your wallet contains eleven dollars. Your possessions include the amethyst, two tiny fossils, and a badge recognizing your domestic sovereignty.</p>`,
+      question: "What do you keep?",
+      choices: [
+        ["A","Keep the amethyst.","Your car's suspension makes a formal objection."],
+        ["B","Return everything except the badge.","The Republic of Guest Bedroom establishes a no-rock monetary policy."],
+        ["C","Trade for one small Tucson souvenir.","You receive a stone the vendor assures you is local to Earth."],
+        ["D","Spend the last eleven dollars on food.","This is the first purchase your spine supports." ]
+      ], next: 4
+    },
+    {
+      title: "Exit Through the Gift Shop",
+      body: `<p>You find daylight six hours after entering. The Gem Show continues in every direction and possibly underneath you.</p>`,
+      question: "What becomes of the adventure?",
+      final: true,
+      choices: [
+        ["A","Display the amethyst at home.","It occupies the chair nobody was using much anyway.","The Twenty-Dollar Rock","Total cost: twenty dollars plus orthopedic follow-up."],
+        ["B","Frame the household badge.","Visitors must clear customs before entering the guest room.","A Tiny Mineral Republic","Its chief export is laundry."],
+        ["C","Volunteer as a shuttle guide next year.","You carry a current map and become legendary.","The One Who Found the Exit","Your directions use streets instead of quartz."],
+        ["D","Promise never to return.","A vendor emails you a preview invitation eleven months later.","Just Looking, Again","You immediately click the amethyst section." ]
+      ]
+    }
+  ]
+};
+
+const adventure8 = {
+  slug: "but-its-a-dry-heat",
+  title: "But It's a Dry Heat",
+  subtitle: "A new snowbird attempts July with confidence, optimism, and one decorative water bottle.",
+  scenes: [
+    {
+      title: "The July Walking Tour",
+      body: `<p>Your new neighbor Gary arrives from Minnesota and announces a noon walking tour of downtown Tucson.</p><p>The temperature display reads 111°F.</p><p>Gary taps his decorative eight-ounce water bottle and says, “But it's a dry heat.”</p><p>The sidewalk begins preheating him.</p>`,
+      question: "What do you tell Gary?",
+      choices: [
+        ["A","Reschedule for early morning.","Gary asks whether 10:00 A.M. counts. The sun answers for you."],
+        ["B","Drive instead.","His steering wheel has achieved a defensive temperature."],
+        ["C","Explain hydration and shade.","Gary says he drank coffee. Arizona removes one confidence point."],
+        ["D","Let him step outside for ten seconds.","At second seven, Gary begins renegotiating his beliefs." ]
+      ], next: 1
+    },
+    {
+      title: "The Oven-Mitt Economy",
+      body: `<p>Gary agrees to drive. The seat belt buckle brands a small Chevrolet logo into his optimism.</p><p>The air conditioner blows hot air while deciding whether the relationship is serious.</p><p>A dashboard warning reports HIGH ENGINE TEMPERATURE.</p>`,
+      question: "What comes first?",
+      choices: [
+        ["A","Stop safely and shut the car down.","The car appreciates becoming shade-adjacent."],
+        ["B","Turn the AC colder.","The AC responds with warmer wind and management-level silence."],
+        ["C","Open the radiator cap.","You stop Gary before he converts dry heat into steam heat."],
+        ["D","Call roadside assistance.","The estimated arrival is forty minutes. The hold message recommends remaining somewhere cool." ]
+      ], next: 2
+    },
+    {
+      title: "Somewhere Cool",
+      body: `<p>You reach a nearby library lobby. Gary drinks water slowly and studies a heat-safety poster featuring every mistake he proposed.</p><p>Outside, his plastic sunglasses soften into a more relaxed shape.</p>`,
+      question: "How should the rest of the day change?",
+      choices: [
+        ["A","Cancel outdoor plans.","Gary discovers indoor Tucson contains food and functioning air conditioning."],
+        ["B","Resume at sunset.","The forecast says 104°F at sunset, which Gary calls a clerical error."],
+        ["C","Tour by streetcar.","The air-conditioned streetcar becomes Gary's favorite municipal institution."],
+        ["D","Buy a larger water bottle.","He selects one capable of supporting a small household." ]
+      ], next: 3
+    },
+    {
+      title: "The Phrase Retires",
+      body: `<p>Roadside assistance confirms a failing cooling fan. Gary admits the heat felt different than expected.</p><p>“Still dry,” he says weakly.</p><p>A librarian drops a stack of summer safety brochures on the desk with judicial force.</p>`,
+      question: "What lesson does Gary accept?",
+      choices: [
+        ["A","Dry heat is still dangerous heat.","The sentence enters his vocabulary without a joke attached."],
+        ["B","Plan outdoor activity around the sun.","Gary schedules tomorrow's walk for 5:15 A.M. and learns birds have meetings then."],
+        ["C","Cars need summer preparation too.","He adds coolant checks, battery checks, and windshield mittens to his list."],
+        ["D","Locals are not hiding indoors from weakness.","They are demonstrating successful adaptation." ]
+      ], next: 4
+    },
+    {
+      title: "Minnesota Reports Back",
+      body: `<p>Gary video-calls his family from an air-conditioned restaurant. They ask how he likes the famous dry heat.</p>`,
+      question: "What does Gary say?",
+      final: true,
+      choices: [
+        ["A","“Dry is not the same as imaginary.”","His family writes it down.","The Tucson Amendment","Gary retires the phrase after one day in active service."],
+        ["B","“It's beautiful before breakfast.”","He becomes a sunrise walker.","Snowbird, Early Edition","By 9:00 A.M., Gary has completed his day."],
+        ["C","“My car tried to cook me.”","The family sends oven mitts as a housewarming gift.","Preheated Resident","Gary keeps them in the glove compartment."],
+        ["D","“But it's a—” then stops.","Every Tucson resident in the restaurant applauds.","Personal Growth","The air conditioner receives a standing ovation too." ]
+      ]
+    }
+  ]
+};
+
+const adventure9 = {
+  slug: "the-jurisdiction-line",
+  title: "The Jurisdiction Line",
+  subtitle: "One fallen traffic sign lands in Tucson, Marana, and unincorporated Pima County at the same time.",
+  scenes: [
+    {
+      title: "Whose Sign Is It?",
+      body: `<p>A windstorm knocks down a stop sign at the entrance to your neighborhood.</p><p>The pole lies in Marana. The sign face rests in unincorporated Pima County. Its shadow falls inside Tucson.</p><p>Three service-request apps reject your photograph.</p>`,
+      question: "Who do you call first?",
+      choices: [
+        ["A","Marana.","They confirm ownership of the pole but not the stopping instruction."],
+        ["B","Pima County.","The county accepts the sign face pending proof it has resided there thirty days."],
+        ["C","Tucson.","Tucson offers to inspect the shadow during normal business hours."],
+        ["D","Call 911 about the dangerous intersection.","Deputies place temporary cones while dispatch begins a jurisdictional group chat." ]
+      ], next: 1
+    },
+    {
+      title: "Three Trucks Arrive",
+      body: `<p>By noon, three maintenance trucks surround the sign. Each crew has a different map.</p><p>All maps agree on one point: responsibility belongs six feet away.</p><p>Traffic now moves according to eye contact and spiritual readiness.</p>`,
+      question: "How do you force a decision?",
+      choices: [
+        ["A","Measure the exact boundary.","The survey marker is beneath the fallen pole."],
+        ["B","Ask one crew to repair it and bill the others.","This proposal is rejected for being both practical and comprehensible."],
+        ["C","Invite local news.","A reporter arrives and every crew immediately locates a supervisor."],
+        ["D","Stand the sign up yourself.","A crew stops you because unauthorized repair could confuse the jurisdiction." ]
+      ], next: 2
+    },
+    {
+      title: "The Boundary Hearing",
+      body: `<p>Officials convene a roadside hearing. The folding table crosses all three jurisdictions.</p><p>Marana controls one leg, Tucson another, and the county claims the coffee.</p><p>A fourth agency arrives because the road may receive regional transportation funding.</p>`,
+      question: "What solution goes on record?",
+      choices: [
+        ["A","Create a shared maintenance agreement.","Lawyers estimate six months to define the word shared."],
+        ["B","Move the sign entirely into one jurisdiction.","Everyone supports this until asked which one."],
+        ["C","Replace it with a portable stop sign.","The portable sign requires a temporary-location permit."],
+        ["D","Install three smaller stop signs.","Drivers would stop once for each government, increasing civic participation." ]
+      ], next: 3
+    },
+    {
+      title: "Nature Chooses",
+      body: `<p>Another gust rolls the sign twelve feet downhill, entirely into Pima County.</p><p>The county crew measures twice, sighs, and loads a replacement pole.</p><p>Marana and Tucson remain to supervise from their respective edges.</p>`,
+      question: "What should prevent the next dispute?",
+      choices: [
+        ["A","One emergency contact for shared boundaries.","The contact receives three phone numbers and one very large coffee."],
+        ["B","A public jurisdiction map people can understand.","Designers remove seventeen layers and discover streets underneath."],
+        ["C","Joint repair authority for safety hazards.","Crews celebrate permission to fix first and argue later."],
+        ["D","Heavier stop signs.","Engineering calls this emotionally satisfying but incomplete." ]
+      ], next: 4
+    },
+    {
+      title: "Stop Means Stop",
+      body: `<p>The new sign stands before sunset. It occupies one jurisdiction, serves three, and has four agency stickers on the back.</p>`,
+      question: "How is the border remembered?",
+      final: true,
+      choices: [
+        ["A","Adopt the joint repair agreement.","The next fallen sign is fixed before anyone locates a folding table.","Fix First, Map Later","Government briefly resembles a service."],
+        ["B","Publish the simplified map.","Residents learn who maintains their road and who merely sends newsletters.","You Are Here, Probably","The map includes only one footnote."],
+        ["C","Preserve the three-legged hearing table.","It enters a museum of regional cooperation.","Shared Furniture","The county retains custody of the coffee stain."],
+        ["D","Let wind settle future disputes.","A weather vane is added to the emergency plan.","Natural Arbitration","Monsoon season becomes legally binding." ]
+      ]
+    }
+  ]
+};
+
+const adventure10 = {
+  slug: "the-last-sonoran-hot-dog",
+  title: "The Last Sonoran Hot Dog",
+  subtitle: "A missing cart, a secret recipe, and Tucson's least neutral food investigation.",
+  scenes: [
+    {
+      title: "The Empty Corner",
+      body: `<p>Your favorite Sonoran hot-dog cart is missing from its usual corner.</p><p>In its place is one folding chair and a handwritten note:</p><div class="sign">WE HAVE THE RECIPE.<br>BRING THREE PERFECT CHILES.</div><p>The owner's apron lies beneath the chair. The owner, Rosa, is not answering her phone.</p>`,
+      question: "What do you investigate first?",
+      choices: [
+        ["A","Call Rosa again.","Her voicemail says, “If this is about ketchup, you have the wrong number.”"],
+        ["B","Ask neighboring vendors.","They saw Rosa leave voluntarily with a cooler and a man carrying an enormous bag of bolillos."],
+        ["C","Examine the note.","The back contains a grease mark shaped like A Mountain."],
+        ["D","Report the missing cart.","Police ask for its license plate. You explain the cart's relationship with plates is culinary." ]
+      ], next: 1
+    },
+    {
+      title: "Three Perfect Chiles",
+      body: `<p>The clue leads to a produce market. The vendor offers three chiles: one mild, one dangerous, and one that requires signing a waiver.</p><p>He says Rosa bought the same set that morning and left a message: “Follow the beans.”</p>`,
+      question: "Which clue do you follow?",
+      choices: [
+        ["A","Buy the mild chile.","The vendor stamps your receipt with a tiny bacon-wrapped arrow."],
+        ["B","Buy the dangerous chile.","Your eyes provide turn-by-turn navigation through tears."],
+        ["C","Refuse the waiver chile.","The vendor respects your desire to retain sensation."],
+        ["D","Ask where the beans came from.","He points toward a warehouse near the railroad tracks." ]
+      ], next: 2
+    },
+    {
+      title: "The Recipe Auction",
+      body: `<p>Inside the warehouse, Tucson food vendors sit around Rosa's missing cart.</p><p>Rosa stands at the front holding her recipe card.</p><p>This is not a kidnapping. It is a secret meeting.</p><p>A national restaurant chain offered to buy the recipe and rename it the Desert Bacon Dog.</p>`,
+      question: "Why did Rosa stage the disappearance?",
+      choices: [
+        ["A","To test whether Tucson would notice.","The empty corner generated 600 calls before lunch. Tucson noticed."],
+        ["B","To unite local vendors against the sale.","Every vendor agrees except one who wants to negotiate condiment royalties."],
+        ["C","To identify who leaked the recipe.","Only three people knew about the three-chile note. One is wearing a corporate lanyard under his apron."],
+        ["D","To create publicity.","Rosa admits mystery performs better online than a two-for-one coupon." ]
+      ], next: 3
+    },
+    {
+      title: "The Taste Test",
+      body: `<p>The chain representative unveils its Desert Bacon Dog. It contains turkey bacon, sweet relish, and something described as southwest-inspired foam.</p><p>The warehouse becomes dangerously quiet.</p><p>Rosa serves the original beside it.</p>`,
+      question: "How should Tucson decide?",
+      choices: [
+        ["A","Blind taste test.","Every blindfolded judge identifies the foam by disappointment."],
+        ["B","Protect the recipe as a local tradition.","Lawyers begin discussing trademarks while everyone else keeps eating."],
+        ["C","Let Rosa sell if the price is right.","Rosa says the issue is not selling—it is watching the buyer remove everything worth buying."],
+        ["D","Require the chain to use the real name.","The representative pronounces Sonoran three different ways and loses negotiating privileges." ]
+      ], next: 4
+    },
+    {
+      title: "The Cart Returns",
+      body: `<p>By sunset, Rosa's cart returns to its corner. A line stretches down the block. The recipe card remains in her apron.</p>`,
+      question: "What happens to the recipe?",
+      final: true,
+      choices: [
+        ["A","Create a Tucson vendor cooperative.","Local carts share purchasing power without surrendering their recipes.","The Cartel of Deliciousness","Legal counsel strongly recommends a different name."],
+        ["B","Publish the basic recipe but keep Rosa's touch secret.","Thousands copy it. None tastes exactly like Rosa's.","Ingredients Aren't the Whole Story","The missing ingredient is apparently Rosa refusing shortcuts."],
+        ["C","Reject the chain and hold an annual taste festival.","The Desert Bacon Dog enters once and finishes behind a napkin.","Tucson Chooses Lunch","The foam is never seen again."],
+        ["D","Sell the recipe with strict conditions.","The contract requires the correct ingredients, name, and one Tucson cook in every kitchen.","Going National, Still Sonoran","America finally learns beans belong on more things." ]
+      ]
+    }
+  ]
+};
