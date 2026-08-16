@@ -15,8 +15,10 @@
 body { margin: 0; min-height: 100vh; background: linear-gradient(180deg, var(--sky), #fff 45%, var(--sand)); color: var(--ink); }
 button, a { font: inherit; }
 .site-header { padding: 1rem max(1rem, calc((100% - 760px)/2)); background: var(--blue-dark); color: #fff; box-shadow: 0 2px 8px #123f5733; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .brand { display: block; width: fit-content; color: #fff; font-size: clamp(1.45rem, 5vw, 2rem); font-weight: 850; text-decoration: none; }
 .tagline { display: block; margin-top: .2rem; color: #cce7ef; font-size: .95rem; }
+.site-nav a { color: #fff; font-weight: 750; text-underline-offset: .2em; }
 main { width: min(100% - 1.5rem, 720px); margin: 1.2rem auto 2rem; }
 .card { background: #fffffff2; border: 1px solid var(--line); border-radius: 18px; padding: clamp(1rem, 4vw, 1.6rem); box-shadow: 0 8px 26px #123f5714; }
 .eyebrow { margin: 0 0 .35rem; color: var(--orange); font-size: .78rem; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
@@ -48,11 +50,17 @@ p { line-height: 1.55; }
 .ending-name { color: var(--orange); font-weight: 900; font-size: 1.12rem; }
 .toast { position: fixed; left: 50%; bottom: 1rem; translate: -50% 0; padding: .7rem 1rem; border-radius: 9px; background: var(--blue-dark); color: #fff; box-shadow: 0 5px 20px #0004; }
 footer { padding: 1.5rem 1rem 2rem; color: var(--muted); text-align: center; font-size: .82rem; }
+footer a { color: var(--blue-dark); font-weight: 750; }
+.about-copy h2 { margin-top: 1.35rem; font-size: 1.25rem; }
+.about-copy h2:first-of-type { margin-top: 1rem; }
+.about-note { padding: .9rem 1rem; border-left: 5px solid var(--orange); border-radius: 6px; background: var(--sand); }
+.about-home { display: inline-block; margin-top: .5rem; padding: .7rem 1rem; border-radius: 10px; background: var(--blue); color: #fff; font-weight: 800; text-decoration: none; }
 @media (max-width: 430px) {
   main { width: min(100% - 1rem, 720px); margin-top: .65rem; }
   .card { border-radius: 14px; padding: 1rem; }
   .choice { padding: .72rem .8rem; }
   .control { flex: 1 1 auto; min-width: 68px; }
+  .header-inner { align-items: flex-start; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .adventure-tile, .choice, .control { transition: .16s ease; }
