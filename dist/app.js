@@ -271,7 +271,11 @@ function load() {
 }
 function positionView(target = "scene") {
   const resetScroll = () => {
-    const anchor = target === "result" ? document.querySelector(".choice.selected") : app;
+    const anchor = target === "result"
+      ? document.querySelector(".choice.selected")
+      : target === "decision"
+        ? document.querySelector(".question")
+        : app;
     if (anchor) anchor.scrollIntoView({ block: "start", behavior: "auto" });
   };
   resetScroll();
@@ -289,7 +293,7 @@ function controls() {
   return `<div class="controls-wrap"><span class="controls-label">Adventure Controls</span><div class="controls">
     <button class="control" data-action="share">Share</button>
     <button class="control" data-action="restart">Restart</button>
-    <button class="control" data-action="back" ${state.history.length ? "" : "disabled"}>Back Up</button>
+    <button class="control" data-action="back" ${state.selected !== null || state.history.length ? "" : "disabled"}>Back Up</button>
     <button class="control" data-action="end">End</button>
   </div></div>`;
 }
@@ -347,6 +351,8 @@ document.addEventListener("click", (event) => {
   if (action === "continue") {
     state.history.push({ scene: state.scene, selected: state.selected });
     state.scene = adventure.scenes[state.scene].next; state.selected = null; renderScene();
+  } else if (action === "back" && state.selected !== null) {
+    state.selected = null; renderScene(false, "decision");
   } else if (action === "back" && state.history.length) {
     const previous = state.history.pop(); state.scene = previous.scene; state.selected = previous.selected; renderScene(false, "result");
   } else if (action === "restart") restart();
