@@ -235,7 +235,7 @@ function restart() {
   state.scene = 0; state.selected = null; state.history = []; localStorage.removeItem(`tucson:${adventure.slug}`); renderScene();
 }
 async function shareAdventure() {
-  const data = { title: adventure.title, text: "I found a Tucson pothole deep enough to become public transportation. What would you do?", url: `${location.origin}${storyPath}?fresh=1` };
+  const data = { title: adventure.title, text: `I just tried “${adventure.title}” on Tucson Adventures. What would you do?`, url: `${location.origin}${storyPath}?fresh=1` };
   try {
     if (navigator.share) await navigator.share(data);
     else { await navigator.clipboard.writeText(`${data.text} ${data.url}`); showToast("Adventure link copied"); }
