@@ -31,7 +31,7 @@ const adventure1 = {
     },
     {
       title: "Two Mayors, One Pair of Scissors",
-      body: `<p>The conductor reveals tunnels to the university, airport, and northwest Tucson. One is labeled:</p><div class="sign">CORTARO EXPRESS — NO RAILROAD DELAYS</div><p>Three people in the crowd weep.</p><p>The modern streetcar's sign changes to <strong>NEXT STOP: 2046</strong>. It rolls into the darkness—and returns moments later carrying a second, identical mayor.</p><p>Both mayors shout, “Don't let it leave!”</p>`,
+      body: `<p>The conductor reveals tunnels to the university, airport, and northwest Tucson. One is labeled:</p><div class="sign">CORTARO EXPRESS — NO RAILROAD DELAYS</div><p>Three people in the crowd weep.</p><p>Meanwhile, Tucson's mayor steps inside the modern streetcar to retrieve the ceremonial scissors. The doors close behind him. Before the operator can reopen them, the destination sign changes to <strong>NEXT STOP: 2046</strong>.</p><p>The streetcar rolls into the darkness.</p><p>Seconds later, it returns. The mayor steps out holding the scissors. Then a second, identical mayor follows him onto the platform wearing a lapel pin that reads <strong>TUCSON 2046—STILL STUDYING THE ISSUE</strong>.</p><p>The conductor stares at them. “The tunnel duplicated him on the return trip.”</p><p>Both mayors point at each other and shout, “Don't let him leave!”</p>`,
       question: "What do you do about Tucson's duplicate mayor?",
       choices: [
         ["A", "Determine which mayor belongs to 2026.", "You ask each mayor to explain the current road plan. Both answer, “We're gathering community input.” The identity test is inconclusive."],
