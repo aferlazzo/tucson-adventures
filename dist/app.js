@@ -315,7 +315,7 @@ function renderScene(push = false, position = "scene") {
   const selected = state.selected;
   const choices = scene.choices.map((choice, index) => {
     if (selected !== null && selected !== index) return "";
-    return `<button class="choice ${selected === index ? "selected" : ""}" data-choice="${index}" ${selected !== null ? "disabled" : ""}><strong>${choice[0]}.</strong> ${escapeText(choice[1])}</button>`;
+    return `<button class="choice ${selected === index ? "selected" : ""}" data-choice="${index}" ${selected !== null ? "disabled" : ""}>${escapeText(choice[1])}</button>`;
   }).join("");
   let result = "";
   if (selected !== null) {
