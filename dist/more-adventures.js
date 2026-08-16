@@ -447,3 +447,67 @@ const adventure10 = {
     }
   ]
 };
+
+const adventure11 = {
+  slug: "the-boneyard-restroom",
+  title: "The Boneyard Restroom Connection",
+  subtitle: "A 35-minute flight to Phoenix adds one unscheduled stop and an increasingly urgent question.",
+  scenes: [
+    {
+      title: "A Slight Change in Our Route",
+      body: `<p>Your flight from Tucson to Phoenix has barely climbed above the city when the pilot makes an announcement.</p><div class="quote">Ladies and gentlemen, due to unexpected congestion at Sky Harbor, we will make a brief unscheduled stop at an alternate Tucson facility.</div><p>The plane banks east instead of north.</p><p>Below you, thousands of retired military aircraft sit in perfect desert rows.</p><p>The passenger beside you presses her face to the window. “Is that the Boneyard?”</p><p>You press the call button. You had too much coffee at the airport, and history can wait.</p>`,
+      question: "What do you ask the flight attendant?",
+      choices: [
+        ["A","“Are we actually landing in the Boneyard?”","She says the proper term is an unscheduled ground experience."],
+        ["B","“How brief is brief?”","She gives the same smile airlines use before introducing a new definition of brief."],
+        ["C","“Is the restroom available?”","She points toward the occupied sign. Somebody got there one announcement ahead of you."],
+        ["D","“Can Phoenix congestion send us anywhere else?”","She says the alternate list included Mesa, Las Vegas, and apparently aviation history." ]
+      ], next: 1
+    },
+    {
+      title: "Welcome to the Connection",
+      body: `<p>The plane lands on a narrow strip beside rows of silent aircraft. A stair truck arrives bearing the words:</p><div class="sign">TEMPORARY PASSENGER TRANSFER<br><small>Not normally passengers</small></div><p>The pilot says everyone must leave the plane while a mysterious indicator light is inspected.</p><p>A ground employee leads the passengers between retired cargo planes, bombers, and helicopters. There is no terminal. There is no restroom sign. There is, however, a gift shop arrow pointing toward a trailer.</p>`,
+      question: "Where do you look first?",
+      choices: [
+        ["A","Follow the gift shop arrow.","The trailer sells patches, postcards, and a mug reading I SURVIVED MY TUCSON LAYOVER. It has no public restroom."],
+        ["B","Ask the ground employee directly.","He radios Operations. Operations asks whether you are civilian, military, airline, contractor, or an unrecognized fifth category."],
+        ["C","Return to the airplane restroom.","The stairs have already pulled away. Your seat is now twelve vertical feet and one federal rule away."],
+        ["D","Follow a sign marked FACILITIES.","It leads to aircraft maintenance. Technically correct. Medically unhelpful." ]
+      ], next: 2
+    },
+    {
+      title: "Restroom Clearance Required",
+      body: `<p>A security officer arrives with a clipboard.</p><p>He explains that the nearest restroom is inside a restricted building. To enter, every passenger needs a temporary badge, a government-issued ID, and the name of a sponsoring department.</p><p>“My sponsoring department is coffee,” you say.</p><p>The officer does not laugh, but the woman beside you does enough for both of them.</p><p>Meanwhile, a maintenance tug begins towing your airliner deeper into the rows of retired aircraft.</p>`,
+      question: "What do you do now?",
+      choices: [
+        ["A","Complete the temporary badge form.","Question 14 asks for your purpose. You write RESTROOM in letters large enough to qualify as an emergency beacon."],
+        ["B","Ask to use the pilot's facilities.","The officer explains that pilots use the same restricted building, but possess the advanced credential of knowing where it is."],
+        ["C","Point out that your airplane is leaving without you.","The officer radios the tug. The tug driver says he was told to park it beside similar equipment and may have interpreted similar too broadly."],
+        ["D","Organize the passengers into a restroom delegation.","Thirty-seven people raise their hands. The security officer upgrades the situation from individual request to infrastructure problem." ]
+      ], next: 3
+    },
+    {
+      title: "Gate B-52",
+      body: `<p>The group is escorted to a low building hidden behind the tail of a retired bomber.</p><p>A paper sign on the door reads:</p><div class="sign">PASSENGER COMFORT STATION<br><small>Established eleven minutes ago</small></div><p>Inside is one restroom and a departure monitor salvaged from somewhere. It lists your flight at <strong>Gate B-52</strong>.</p><p>The pilot announces that the indicator light was caused by a loose coffee-pot latch. The aircraft is ready, but the tug driver cannot remember which row he parked it in.</p>`,
+      question: "How do you help locate the plane?",
+      choices: [
+        ["A","Use the photo you took during landing.","The image shows your airliner beside a faded tail marked 82. Unfortunately, the Boneyard contains several miles of faded 82s."],
+        ["B","Call your own phone left at your seat.","A flight attendant answers. Her directions begin, “We are between two large gray airplanes.”"],
+        ["C","Ask operations to track the tug.","Operations tracks every vehicle except the one currently relocating commercial aviation."],
+        ["D","Search for the only plane with active cabin lights.","At sunset, one glowing row stands out among the retired aircraft. Thirty-seven passengers cheer for electricity." ]
+      ], next: 4
+    },
+    {
+      title: "Departing the Boneyard",
+      body: `<p>You reboard the plane. The pilot promises Phoenix is now accepting arrivals.</p><p>The flight attendant closes the door and asks whether anyone needs anything before departure.</p><p>Every passenger looks at you.</p><p>You are finally comfortable, officially badged, and carrying a Boneyard gift-shop mug you do not remember buying.</p>`,
+      question: "How does the unscheduled connection end?",
+      final: true,
+      choices: [
+        ["A","Keep the temporary restroom badge.","Security stamps it VOID but lets you take it home.","Cleared for Facilities","You possess the Boneyard's least glamorous and most urgently earned souvenir."],
+        ["B","Suggest making the stop a regular route.","The airline tests TUS–BONEYARD–PHX until passengers learn the connection has no lounge.","The Historic Layover","Frequent flyers receive priority restroom clearance."],
+        ["C","Write a glowing review of the restroom.","You give it five stars for existence and one star for access.","Comfort Station Critic","Your review becomes the facility's entire public-relations campaign."],
+        ["D","Ask the pilot to drive to Phoenix instead.","He points out that you are now on a working airplane, which is more than can be said for most of the neighborhood.","Back in the Air","The remaining flight takes twenty-three minutes. The story takes years to explain." ]
+      ]
+    }
+  ]
+};
