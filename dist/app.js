@@ -18,36 +18,36 @@ const adventure1 = {
       next: 1
     },
     {
-      title: "The Historic Line",
-      body: `<p>The mayor cuts a ribbon. A reporter asks whether federal transit money paid for the project.</p><p>“No,” Elena explains. “Deferred street maintenance did.” The answer receives the morning's loudest applause.</p><p>Then a second streetcar emerges from the tunnel. It is covered in dust. Its destination sign reads:</p><div class="sign">EL CONQUISTADOR — 1948</div><p>An antique conductor looks up through the pothole. “Is this Tucson?”</p>`,
+      title: "The Forgotten Line",
+      body: `<p>The mayor cuts a ribbon. A reporter asks whether federal transit money paid for the project.</p><p>“No,” Elena explains. “Deferred street maintenance did.” The answer receives the morning's loudest applause.</p><p>Then a second streetcar emerges from the tunnel. It is covered in dust. Its destination sign reads:</p><div class="sign">EL CONQUISTADOR — HISTORIC LINE</div><p>The conductor, a very current and very confused transit mechanic named Luis, looks up through the pothole.</p><p>“I found this car in a sealed maintenance bay,” he says. “You need to see what's behind it.”</p>`,
       question: "How do you respond?",
       choices: [
-        ["A", "Climb aboard and question the conductor.", "He welcomes you aboard, punches a ticket dated 1948, and warns that the tunnels were not lost. They were sealed. Before he can explain why, the modern streetcar begins moving on its own."],
-        ["B", "Evacuate both streetcars and seal the pothole.", "Everyone agrees until three commuters refuse to leave because this is the first Tucson connection that arrived early. The modern streetcar's destination sign suddenly changes."],
-        ["C", "Ask where the antique streetcar has been for 78 years.", "“Waiting for Tucson to finish the surface roads,” the conductor says. He checks his watch. “We assumed another century.” The modern streetcar hums to life beside him."],
-        ["D", "Add ‘Historic Line’ to the banner and hold another ribbon-cutting.", "City staff find a second ribbon. The mayor praises an expansion connecting Tucson's future to a past nobody knew it had. The conductor climbs onto his roof. “We weren't lost,” he shouts. “We were sent back!”"]
+        ["A", "Climb aboard and ask Luis what he found.", "Behind the maintenance bay, Luis found a tiled station, a control room, and a wall map showing tunnels beneath half of Tucson."],
+        ["B", "Evacuate both streetcars and seal the pothole.", "Everyone agrees until three commuters refuse to leave because this is the first Tucson connection that arrived early. Luis warns that sealing the opening could block the only exit."],
+        ["C", "Ask why the historic streetcar was sealed underground.", "Luis found no explanation—only a city order stamped PROJECT SUSPENDED and a handwritten note: Tucson would lose its character if everything worked."],
+        ["D", "Add ‘Historic Line’ to the banner and hold another ribbon-cutting.", "City staff find a second ribbon. The mayor praises a historic expansion nobody knew existed. Luis interrupts to announce that the tunnel contains an entire forgotten transit system."]
       ],
       next: 2
     },
     {
-      title: "Two Mayors, One Pair of Scissors",
-      body: `<p>The conductor reveals tunnels to the university, airport, and northwest Tucson. One is labeled:</p><div class="sign">CORTARO EXPRESS — NO RAILROAD DELAYS</div><p>Three people in the crowd weep.</p><p>Meanwhile, Tucson's mayor steps inside the modern streetcar to retrieve the ceremonial scissors. The doors close behind him. Before the operator can reopen them, the destination sign changes to <strong>NEXT STOP: 2046</strong>.</p><p>The streetcar rolls into the darkness.</p><p>Seconds later, it returns. The mayor steps out holding the scissors. Then a second, identical mayor follows him onto the platform wearing a lapel pin that reads <strong>TUCSON 2046—STILL STUDYING THE ISSUE</strong>.</p><p>The conductor stares at them. “The tunnel duplicated him on the return trip.”</p><p>Both mayors point at each other and shout, “Don't let him leave!”</p>`,
-      question: "What do you do about Tucson's duplicate mayor?",
+      title: "The Map Tucson Misplaced",
+      body: `<p>Luis leads everyone into the old control room. A wall map shows tunnels to the university, airport, and northwest Tucson. One line is labeled:</p><div class="sign">CORTARO EXPRESS — NO RAILROAD DELAYS</div><p>Three people in the crowd weep.</p><p>A filing cabinet contains the original 1948 plans. The underground system was nearly finished, tested, and then removed from every public map.</p><p>The mayor asks the obvious question: “Why would Tucson bury a working transit system?”</p><p>Luis points to one remaining locked cabinet marked <strong>DO NOT OPEN WITHOUT COMMUNITY INPUT</strong>.</p>`,
+      question: "How do you investigate the abandoned system?",
       choices: [
-        ["A", "Determine which mayor belongs to 2026.", "You ask each mayor to explain the current road plan. Both answer, “We're gathering community input.” The identity test is inconclusive."],
-        ["B", "Interrogate the 1948 conductor.", "He says duplicate public officials are a known side effect of municipal time travel. “Usually the paperwork frightens one away.” Neither mayor moves."],
-        ["C", "Send the train to 2046 for a completed road plan.", "It returns with a 900-page study recommending another study. The cover says FINAL DRAFT 7. Both mayors call it encouraging."],
-        ["D", "Hold a third ribbon-cutting for Tucson's first duplicate mayor.", "Tucson may not be ready for time travel, but it has an entire closet of ceremonial ribbon. The future mayor wears a pin reading TUCSON 2046—STILL STUDYING THE ISSUE."]
+        ["A", "Open the locked cabinet.", "Inside is a 900-page study recommending that the city study whether to preserve the completed system. The cover says FINAL DRAFT 7."],
+        ["B", "Follow the Cortaro Express tunnel first.", "The rails are intact, the signals still have power, and the first sign reads CORTARO—17 MINUTES. Several witnesses accuse it of showing off."],
+        ["C", "Inspect the old control panel before moving any trains.", "Most switches are clearly labeled. One large green button simply says RESUME NORMAL SERVICE."],
+        ["D", "Ask the mayor to explain the missing public records.", "He promises full transparency, then discovers every relevant file has been classified as routine utility work. Even he looks impressed."]
       ],
       next: 3
     },
     {
       title: "Normal Service Resumes",
-      body: `<p>A rumble passes beneath Congress Street. Manhole covers bounce. Parking meters begin accepting 1948 nickels.</p><p>Destination signs illuminate belowground:</p><div class="sign">Mount Lemmon Local<br>Airport Express<br>Marana—Pending Cooperation<br>Gem Show Seasonal<br>Somewhere Affordable</div><p>A recorded voice announces, “Please stand behind the yellow cactus.”</p><p>Both mayors appoint you Director of Accidental Transportation.</p>`,
+      body: `<p>Someone presses RESUME NORMAL SERVICE. A rumble passes beneath Congress Street. Manhole covers bounce. Parking meters begin accepting nickels.</p><p>Destination signs illuminate belowground:</p><div class="sign">Mount Lemmon Local<br>Airport Express<br>Marana—Pending Cooperation<br>Gem Show Seasonal<br>Somewhere Affordable</div><p>A recorded voice announces, “Please stand behind the yellow cactus.”</p><p>The mayor appoints you Director of Accidental Transportation.</p>`,
       question: "What is your first official decision?",
       choices: [
         ["A", "Stop service until engineers inspect the tunnels.", "The inspection form asks for the original permit number. It was filed in 1947, so the engineers estimate a response by Thursday—2049."],
-        ["B", "Open the Airport Express and test where it goes.", "The train returns carrying confused passengers from the old airport terminal and luggage bearing airline stickers nobody has seen since 1963."],
+        ["B", "Open the Airport Express and test where it goes.", "The train reaches a sealed platform beneath the airport. The escalator ends inside a janitor's closet that has been confusing maintenance workers for decades."],
         ["C", "Board the Somewhere Affordable line immediately.", "You return the reflective vest. “I resign.” “You've been director for eleven seconds,” Elena says. “A personal record.” You leap aboard with renters, retirees, and one real-estate agent chained to the emergency brake."],
         ["D", "Open everything with Tucson's standard pothole waiver.", "The waiver is 37 pages long and asks passengers to accept risks involving heat, wildlife, temporal duplication, and “other.” Everyone signs without reading it." ]
       ],
@@ -55,24 +55,24 @@ const adventure1 = {
     },
     {
       title: "Old Tucson—The Other One",
-      body: `<p>The train stops beneath an artificial blue sky. Modest houses surround the station, each with solar panels, a garage, and a suspiciously green lawn.</p><div class="sign">OLD TUCSON<br><small>Not the movie studio. The other one.</small></div><p>A woman in 1948 clothing welcomes everyone. “Homes start at $8,900—but purchases require 1948 dollars.”</p><p>The real-estate agent opens a suitcase of old bills. “I've been preparing for this market correction my entire career.”</p>`,
+      body: `<p>The train stops beneath an artificial blue sky. Unfinished model homes surround the station, each with a garage and a suspiciously green lawn.</p><div class="sign">OLD TUCSON<br><small>Not the movie studio. The other one.</small></div><p>A sales office still displays its original sign: <strong>Homes planned from $8,900.</strong></p><p>The real-estate agent stares at the abandoned subdivision and slowly opens her laptop.</p><p>“I've been preparing for this market correction my entire career.”</p>`,
       question: "What do you investigate first?",
       choices: [
-        ["A", "Find a station bank that converts modern money.", "The teller offers a historically accurate exchange rate, then adds a modern convenience fee large enough to restore 2026 housing prices."],
+        ["A", "Find out whether the old prices are legally binding.", "The fine print says prices were subject to final city approval. Elena laughs for almost a full minute."],
         ["B", "Find out who built this neighborhood and hid it.", "Blueprints reveal Tucson Below: trains, shaded sidewalks, affordable homes, and no railroad crossings. The 1947 project was suspended after residents warned Tucson would lose its character if everything worked."],
         ["C", "Pool everyone's money and buy the subdivision.", "The plan collapses when nobody agrees who gets the corner house. The agent quietly acquires three streets while everyone argues."],
-        ["D", "Race the agent using nickels from the parking meters.", "You arrive first with $14.35. It covers a utility shed, half a mailbox, and closing costs that have somehow traveled here from 2026."]
+        ["D", "Race the agent to file the first purchase offer.", "You arrive first. Unfortunately, the sales office requires an occupancy permit the city stopped issuing in 1949."]
       ],
       next: 5
     },
     {
       title: "The Repair Crew Arrives",
-      body: `<p>The artificial sky flickers. A warning sounds:</p><div class="quote">Surface pothole closing. Underground access will terminate in twelve minutes.</div><p>Elena calls. “Road crews finally arrived. The repair order was filed in 1983. Nobody wants to risk restarting the paperwork.”</p><p>If the opening closes, everyone may be trapped in 1948—with affordable houses, but no internet.</p>`,
+      body: `<p>The artificial sky flickers. A warning sounds:</p><div class="quote">Surface pothole closing. Underground access will terminate in twelve minutes.</div><p>Elena calls. “Road crews finally arrived. The repair order was filed in 1983. Nobody wants to risk restarting the paperwork.”</p><p>If the opening closes, everyone may be trapped underground—with affordable model homes, but no internet.</p>`,
       question: "What happens to Tucson Below?",
       choices: [
         ["A", "Evacuate everyone on the next train.", "Most board reluctantly. Three retirees refuse after calculating the property tax, and two remote workers stay because they still believe somebody will install fiber."],
         ["B", "Declare the pothole a historic landmark.", "The preservation request succeeds instantly, but requires the pothole to remain exactly as discovered—including the streetcar wedged inside it."],
-        ["C", "Restart Tucson Below and let people remain voluntarily.", "You ask who wants air-conditioning, eleven-dollar property taxes, and no HOA. Forty-six people sit down immediately. The city reactivates around its new residents."],
+        ["C", "Restart Tucson Below and let people remain voluntarily.", "You ask who wants affordable housing, no surface traffic, and an HOA that has not yet been formed. Forty-six people sit down immediately."],
         ["D", "Search the blueprints for another exit.", "You find seventeen exits. Six are beneath car washes, four beneath mattress stores, and one opens inside a city meeting that has been in executive session since 1951." ]
       ],
       next: 6
@@ -85,7 +85,7 @@ const adventure1 = {
       choices: [
         ["A", "Seal the tunnel and protect Tucson Below.", "The last streetcar returns to the surface. You pull the EMERGENCY SECRECY lever, and every map changes to ROUTINE UTILITY WORK—EXPECT DELAYS. Months later, Tucson Below is peaceful—until a train marked PHOENIX BELOW arrives carrying 300 investors. Far above, another pothole opens.", "The Market Finds a Way", "You saved Tucson Below from Tucson Above. You forgot about Phoenix."],
         ["B", "Allow residents, but ban investors and short-term rentals.", "The rules work for nearly six hours. Then the real-estate agent introduces “historic subterranean lodging experiences,” available nightly with a two-night minimum.", "The Loophole Line", "Tucson Below remains technically affordable and spiritually booked through March."],
-        ["C", "Deny everything and blame the broadcast on heatstroke.", "The city issues a statement saying the subway, duplicate mayor, and $8,900 houses were a shared heat mirage. Tucson accepts this immediately. Phoenix does not—and sends surveyors.", "Officially, Nothing Happened", "Congress Street reopens. Nobody can explain why the parking meters still accept nickels."],
+        ["C", "Deny everything and blame the broadcast on heatstroke.", "The city issues a statement saying the subway, forgotten tunnels, and $8,900 model homes were a shared heat mirage. Tucson accepts this immediately. Phoenix does not—and sends surveyors.", "Officially, Nothing Happened", "Congress Street reopens. Nobody can explain why the parking meters still accept nickels."],
         ["D", "Buy every remaining house yourself.", "You become Tucson Below's largest property owner and raise rents to cover the cost of guarding its affordability. The residents replace you as mayor before lunch.", "You Became the Problem", "On the bright side, your eleven-second transportation career is no longer your shortest public appointment."]
       ]
     }
