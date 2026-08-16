@@ -189,11 +189,10 @@ function load() {
     if (saved && Number.isInteger(saved.scene)) Object.assign(state, saved);
   } catch (_) { /* A damaged save should never block the story. */ }
 }
-function focusMain() {
+function positionView(target = "scene") {
   const resetScroll = () => {
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-    window.scrollTo(0, 0);
+    const anchor = target === "result" ? document.querySelector(".choice.selected") : app;
+    if (anchor) anchor.scrollIntoView({ block: "start", behavior: "auto" });
   };
   resetScroll();
   requestAnimationFrame(() => {
@@ -218,9 +217,9 @@ function renderHome(push = false) {
   if (push) history.pushState({}, "", "/");
   const tiles = adventures.map((item, index) => `<a class="adventure-tile" href="/adventures/${item.slug}/?fresh=1" data-start="${item.slug}"><strong>Adventure ${index + 1}: ${item.title}</strong><span>${item.subtitle}</span></a>`).join("");
   app.innerHTML = `<section class="card"><p class="eyebrow">Interactive Tucson Stories</p><h1>Welcome to Tucson Adventures</h1><p class="lede">Everyday Tucson takes one strange turn. You decide what happens next.</p>${tiles}</section>`;
-  focusMain();
+  positionView("scene");
 }
-function renderScene(push = false) {
+function renderScene(push = false, position = "scene") {
   if (push) history.pushState({}, "", storyPath);
   const scene = adventure.scenes[state.scene];
   const selected = state.selected;
@@ -240,7 +239,7 @@ function renderScene(push = false) {
   }
   const adventureNumber = adventures.indexOf(adventure) + 1;
   app.innerHTML = `<article class="card ${scene.final && selected !== null ? "ending" : ""}"><p class="eyebrow">Adventure ${adventureNumber}</p><h2>${scene.title}</h2><div class="story">${scene.body}</div><p class="question">${scene.question}</p><div class="choices">${choices}</div>${result}${controls()}</article>`;
-  save(); focusMain();
+  save(); positionView(position);
 }
 function restart() {
   state.scene = 0; state.selected = null; state.history = []; localStorage.removeItem(`tucson:${adventure.slug}`); renderScene();
@@ -263,13 +262,13 @@ document.addEventListener("click", (event) => {
   const home = event.target.closest("[data-home]");
   if (home) { event.preventDefault(); renderHome(true); return; }
   const choiceButton = event.target.closest("[data-choice]");
-  if (choiceButton && state.selected === null) { state.selected = Number(choiceButton.dataset.choice); renderScene(); return; }
+  if (choiceButton && state.selected === null) { state.selected = Number(choiceButton.dataset.choice); renderScene(false, "result"); return; }
   const action = event.target.closest("[data-action]")?.dataset.action;
   if (action === "continue") {
     state.history.push({ scene: state.scene, selected: state.selected });
     state.scene = adventure.scenes[state.scene].next; state.selected = null; renderScene();
   } else if (action === "back" && state.history.length) {
-    const previous = state.history.pop(); state.scene = previous.scene; state.selected = previous.selected; renderScene();
+    const previous = state.history.pop(); state.scene = previous.scene; state.selected = previous.selected; renderScene(false, "result");
   } else if (action === "restart") restart();
   else if (action === "share") shareAdventure();
   else if (action === "end") renderHome(true);
