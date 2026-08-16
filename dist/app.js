@@ -189,7 +189,18 @@ function load() {
     if (saved && Number.isInteger(saved.scene)) Object.assign(state, saved);
   } catch (_) { /* A damaged save should never block the story. */ }
 }
-function focusMain() { app.focus({ preventScroll: true }); window.scrollTo({ top: 0, behavior: "smooth" }); }
+function focusMain() {
+  const resetScroll = () => {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    window.scrollTo(0, 0);
+  };
+  resetScroll();
+  requestAnimationFrame(() => {
+    resetScroll();
+    app.focus({ preventScroll: true });
+  });
+}
 function showToast(message) {
   document.querySelector(".toast")?.remove();
   const toast = document.createElement("div"); toast.className = "toast"; toast.setAttribute("role", "status"); toast.textContent = message;
@@ -263,6 +274,7 @@ document.addEventListener("click", (event) => {
   else if (action === "share") shareAdventure();
   else if (action === "end") renderHome(true);
 });
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 window.addEventListener("popstate", () => isStoryPath() ? renderScene() : renderHome());
 
 if (isStoryPath()) { load(); renderScene(); } else renderHome();
