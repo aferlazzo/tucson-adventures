@@ -260,6 +260,7 @@ const state = { scene: 0, selected: null, history: [] };
 let storyPath = `/adventures/${adventure.slug}/`;
 
 function isStoryPath() { return location.pathname.startsWith(storyPath); }
+function isAboutPath() { return location.pathname.startsWith("/about"); }
 function escapeText(value) { const span = document.createElement("span"); span.textContent = value; return span.innerHTML; }
 function save() { localStorage.setItem(`tucson:${adventure.slug}`, JSON.stringify(state)); }
 function load() {
@@ -301,6 +302,11 @@ function renderHome(push = false) {
   if (push) history.pushState({}, "", "/");
   const tiles = adventures.map((item, index) => `<a class="adventure-tile" href="/adventures/${item.slug}/?fresh=1" data-start="${item.slug}"><strong>Adventure ${index + 1}: ${item.title}</strong><span>${item.subtitle}</span></a>`).join("");
   app.innerHTML = `<section class="card"><p class="eyebrow">Interactive Tucson Stories</p><h1>Welcome to Tucson Adventures</h1><p class="lede">Everyday Tucson takes one strange turn. You decide what happens next.</p>${tiles}</section>`;
+  positionView("scene");
+}
+function renderAbout(push = false) {
+  if (push) history.pushState({}, "", "/about/");
+  app.innerHTML = `<section class="card about-copy"><p class="eyebrow">About Tucson Adventures</p><h1>Strange Tucson stories. Your decisions.</h1><p class="lede">Tucson Adventures is a collection of interactive stories written by <strong>Tony Ferlazzo</strong>. Each adventure turns a recognizable piece of Tucson life into an absurd problem and lets you decide what happens next.</p><h2>A work of fiction</h2><p class="about-note"><strong>All Tucson Adventures are works of fiction.</strong> The characters, organizations, events, dialogue, and situations are invented for entertainment. Any resemblance to actual people or events is coincidental—or Tucson being Tucson.</p><p>Real places and familiar local frustrations may inspire the setting, but the stories are not news reports, accusations, or accounts of actual events.</p><h2>About the author</h2><p><strong>Tony Ferlazzo</strong> is the author and creator of Tucson Adventures. He lives in the Tucson area and writes interactive stories about the strange decisions desert life makes for you.</p><a class="about-home" href="/" data-home>Explore the adventures</a></section>`;
   positionView("scene");
 }
 function renderScene(push = false, position = "scene") {
@@ -345,6 +351,8 @@ document.addEventListener("click", (event) => {
   }
   const home = event.target.closest("[data-home]");
   if (home) { event.preventDefault(); renderHome(true); return; }
+  const about = event.target.closest("[data-about]");
+  if (about) { event.preventDefault(); renderAbout(true); return; }
   const choiceButton = event.target.closest("[data-choice]");
   if (choiceButton && state.selected === null) { state.selected = Number(choiceButton.dataset.choice); renderScene(false, "result"); return; }
   const action = event.target.closest("[data-action]")?.dataset.action;
@@ -360,6 +368,8 @@ document.addEventListener("click", (event) => {
   else if (action === "end") renderHome(true);
 });
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-window.addEventListener("popstate", () => isStoryPath() ? renderScene() : renderHome());
+window.addEventListener("popstate", () => isAboutPath() ? renderAbout() : isStoryPath() ? renderScene() : renderHome());
 
-if (isStoryPath()) { load(); renderScene(); } else renderHome();
+if (isAboutPath()) renderAbout();
+else if (isStoryPath()) { load(); renderScene(); }
+else renderHome();
