@@ -172,7 +172,87 @@ const adventure2 = {
   ]
 };
 
-const adventures = [adventure1, adventure2];
+const adventure3 = {
+  slug: "the-doctor-is-a-data-center",
+  title: "The Doctor Is a Data Center",
+  subtitle: "A newcomer searches for a primary-care doctor and discovers the county's best-kept server farm.",
+  scenes: [
+    {
+      title: "Accepting New Patients",
+      body: `<p>Three weeks after moving to Pima County, your new neighbor Priya needs a primary-care provider.</p><p>Her insurance directory lists 184 doctors accepting new patients.</p><p>The first 61 phone numbers are disconnected. Twenty-eight offices accept new patients who are already patients. One doctor retired during the Obama administration. Another is apparently a veterinarian.</p><p>At 11:43 P.M., Priya finds one listing with appointments available tomorrow:</p><div class="sign">DESERT CLOUD FAMILY MEDICINE<br>Accepting all patients · Open 24/7<br>Directions: Continue past pavement</div><p>“I'm either getting a physical,” she tells you, “or joining a cult. Want to drive?”</p>`,
+      question: "How do you investigate the miraculous opening?",
+      choices: [
+        ["A", "Call the office before driving anywhere.", "A cheerful voice says, “Your health is important to us,” then places you on hold. After forty minutes, you realize the hold music is generated from your own elevated blood pressure."],
+        ["B", "Check the address on a map.", "The pin sits on an unnamed road beyond a gravel pit. Street View shows desert, a locked gate, and a saguaro blurred for privacy."],
+        ["C", "Book the first available appointment immediately.", "The portal confirms Priya for 8:00 A.M. with DR. PCP-PRIMARY-NULL. It asks her to arrive fifteen minutes early and bring every medical record since birth."],
+        ["D", "Search public records for Desert Cloud Family Medicine.", "You find no medical license. You do find a building permit for a “small records-storage annex” requiring enough electrical capacity to make the application portal briefly sweat."]
+      ],
+      next: 1
+    },
+    {
+      title: "Continue Past Pavement",
+      body: `<p>The next morning, you follow the directions. Pavement ends. Cell service ends. Priya's patience ended Tuesday.</p><p>Beyond a decorative wall disguised as desert landscaping stands an enormous windowless building. Cooling towers hum behind painted silhouettes of saguaros.</p><p>The sign at the gate reads:</p><div class="sign">DESERT CLOUD FAMILY MEDICINE<br><small>Please have insurance card and security clearance ready</small></div><p>A guard scans Priya's appointment confirmation.</p><p>“You're the first actual patient,” he says.</p>`,
+      question: "What do you ask the guard?",
+      choices: [
+        ["A", "Ask where the doctor is.", "He checks a tablet. “Rack C, aisle twelve.” Priya explains that a rack is not a physician. The guard says nobody covered that distinction in orientation."],
+        ["B", "Ask what the building really is.", "He lowers his voice. “Regional data center. Officially it stores medical records. Unofficially it stores every appointment request nobody could schedule.”"],
+        ["C", "Ask who approved construction.", "The permit displays signatures from the city, county, three development authorities, and a committee called Residents for Projects Residents Have Not Heard About."],
+        ["D", "Insist that Priya has a confirmed appointment.", "The guard honors it. Inside, a kiosk measures her temperature, prints a healthy-looking receipt, and schedules follow-up care for the first Tuesday after someone answers the phone." ]
+      ],
+      next: 2
+    },
+    {
+      title: "The Server Room Examination",
+      body: `<p>The guard escorts you into a refrigerated hall containing thousands of blinking servers.</p><p>Every machine is labeled with a healthcare function:</p><div class="sign">FIND A PROVIDER<br>VERIFY COVERAGE<br>REQUEST APPOINTMENT<br>REQUEST REQUEST STATUS<br>APOLOGIZE FOR INCONVENIENCE</div><p>A technician named Mateo explains that the center uses advanced artificial intelligence to maintain Pima County's provider directory.</p><p>“Does it find doctors?” Priya asks.</p><p>“No,” Mateo says. “But it can rearrange the same unavailable doctors in under two seconds.”</p><p>Then alarms sound. The system has detected an unauthorized living patient.</p>`,
+      question: "What should Priya do?",
+      choices: [
+        ["A", "Ask the AI to locate one real appointment.", "Every server spins up. Lights across the valley dim. After seven minutes, the system recommends an urgent-care clinic 83 miles away that closed last Thursday."],
+        ["B", "Download evidence of the false provider listings.", "Mateo helps export the records. The file is so large that the progress bar applies for Medicare before reaching 20 percent."],
+        ["C", "Trigger the building's patient-assistance protocol.", "A robot delivers a clipboard containing seventeen forms and a pen chained to nothing. The emergency protocol has now exhausted its resources."],
+        ["D", "Ask why politicians concealed the data center.", "Mateo shows you the project name: OPERATION HEALTHY GROWTH. Officials feared residents might object to its power use, water use, and complete absence of healthcare." ]
+      ],
+      next: 3
+    },
+    {
+      title: "Community Input Arrives",
+      body: `<p>Priya sends one photograph to a neighborhood group.</p><p>Within twelve minutes, the gate is surrounded by residents, reporters, environmental groups, retired nurses, and six people who have been waiting for dermatology referrals since spring.</p><p>Local officials arrive together and independently announce that they have only just learned about the project they approved.</p><p>One supervisor steps to the microphones.</p><p>“This facility was never hidden,” she says. “It was described in Appendix Q of a 900-page agenda posted online for eleven minutes.”</p><p>The crowd expresses its appreciation using several traditional Tucson hand gestures.</p>`,
+      question: "How should the discovery be made public?",
+      choices: [
+        ["A", "Let Priya explain how a PCP search led here.", "Her story is devastating because everybody has their own version. The press conference becomes a support group with microphones."],
+        ["B", "Make officials read the provider directory aloud.", "The first supervisor reaches three disconnected numbers before requesting a recess. The crowd denies prior authorization."],
+        ["C", "Give Mateo the technical records.", "He demonstrates that the center spends more computing power explaining why appointments are unavailable than scheduling them."],
+        ["D", "Open the gates and let residents tour the facility.", "The server hall fills with people searching the racks for their missing referrals. Someone locates a colonoscopy request from 2024 blinking quietly behind a firewall." ]
+      ],
+      next: 4
+    },
+    {
+      title: "The Emergency Public Meeting",
+      body: `<p>Officials schedule an emergency public meeting for 2:00 P.M. on a weekday in a room with eleven chairs.</p><p>The meeting is moved outside after 600 residents arrive.</p><p>The county presents four facts:</p><div class="quote">The data center is already built.<br>Its contracts run for twenty years.<br>Its cooling system consumes substantial local resources.<br>It has successfully scheduled zero medical appointments.</div><p>Priya raises her hand.</p><p>“Before we discuss the building,” she says, “does anyone here know a primary-care doctor accepting new patients?”</p><p>Every official studies the ground.</p>`,
+      question: "What should happen to the facility now?",
+      choices: [
+        ["A", "Require it to verify every provider listing with a real phone call.", "The AI places thousands of calls. Half reach voicemail. A quarter reach fax machines. One is answered by the veterinarian, who remains surprisingly open to new patients."],
+        ["B", "Convert part of the building into an actual community clinic.", "Engineers discover the server lobby is large enough for exam rooms, but the original plans allocated it entirely to a sculpture titled ACCESS."],
+        ["C", "Shut the data center down immediately.", "Officials warn that every broken provider directory would go offline. Residents ask how they would notice."],
+        ["D", "Keep it operating but publish its contracts and resource use.", "The records reveal consulting fees for Community Listening, Public Confidence, and Choosing a Calming Shade of Beige for the security wall." ]
+      ],
+      next: 5
+    },
+    {
+      title: "Priya's Follow-Up Appointment",
+      body: `<p>Public pressure produces the fastest government action anyone in attendance can remember.</p><p>The hidden sign comes down. The contracts go online. A temporary clinic opens inside the former security office while community leaders negotiate the facility's future.</p><p>Mateo reprograms one server to call medical offices and remove listings that are not genuinely accepting patients.</p><p>The directory shrinks from 184 doctors to three.</p><p>“That looks terrible,” an official says.</p><p>“It is terrible,” Priya replies. “Now it's also accurate.”</p><p>One of the three offices calls her back. The first appointment is in eleven weeks.</p><p>Everyone celebrates, which tells you more about the healthcare situation than the data center ever could.</p>`,
+      question: "What lasting solution does the community choose?",
+      final: true,
+      choices: [
+        ["A", "Turn the data center into a clinic-and-scheduling hub.", "Half the servers continue managing records. The rest of the building gains exam rooms, telehealth booths, and humans authorized to answer telephones.", "The Cloud Gets a Waiting Room", "Priya finally sees a doctor in the same building that once pretended to be one."],
+        ["B", "Create a legally verified public provider directory.", "Medical offices must confirm availability regularly or disappear from the list. The directory becomes much smaller and dramatically more useful.", "Three Honest Doctors", "Pima County loses 181 imaginary options and gains something rarer: accurate information."],
+        ["C", "Use the facility to recruit and support local clinicians.", "Cooling subsidies become training grants, clinic space, and support for practices taking new patients. Officials unveil the plan without using the word synergy.", "Processing People, Not Requests", "The first new physician arrives before the old system finishes generating its apology."],
+        ["D", "Preserve one server exactly as officials designed it.", "It remains in the lobby, endlessly searching for an available PCP and displaying PLEASE HOLD. Schoolchildren visit to learn about early twenty-first-century bureaucracy.", "The Monument to Access", "Once a year, the server recommends the veterinarian." ]
+      ]
+    }
+  ]
+};
+
+const adventures = [adventure1, adventure2, adventure3];
 let adventure = adventures.find((item) => location.pathname.includes(`/adventures/${item.slug}/`)) || adventure1;
 
 const app = document.querySelector("#app");
