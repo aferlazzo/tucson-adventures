@@ -326,6 +326,12 @@ function subwayVisual(sceneIndex) {
       <div class="repair-bar"><span></span></div>
       <div class="phoenix-train">PHOENIX</div>
     </div>
+    ${sceneIndex === 0 ? `<div class="story-beats" aria-hidden="true">
+      <span class="beat beat-one">9:17 A.M. — Congress Street</span>
+      <span class="beat beat-two">9:18 A.M. — One very deep pothole</span>
+      <span class="beat beat-three">The streetcar disappears.</span>
+      <span class="beat beat-four">Tucson has accidentally completed a subway.</span>
+    </div>` : ""}
     <button class="replay-animation" type="button" data-action="replay-animation" aria-label="Replay this animation">Replay animation</button>
   </div>`;
 }
