@@ -34,10 +34,11 @@
   <script src="/app.js" defer></script>
   <script src="/analytics.js" defer></script>
   <script>
-    // Keep the interface lean: the adventure name is all the list needs.
+    // Keep the interface lean without triggering a mutation loop.
     const simplifyAdventureLabels = () => {
       document.querySelectorAll('.adventure-tile strong').forEach(label => {
-        label.textContent = label.textContent.replace(/^Adventure\s+\d+:\s*/i, '');
+        const cleaned = label.textContent.replace(/^Adventure\s+\d+:\s*/i, '');
+        if (cleaned !== label.textContent) label.textContent = cleaned;
       });
       document.querySelectorAll('.adventure-tile span').forEach(subtitle => subtitle.remove());
       document.querySelectorAll('#app .eyebrow').forEach(label => {
