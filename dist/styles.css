@@ -55,13 +55,31 @@ footer a { color: var(--blue-dark); font-weight: 750; }
 .about-copy h2:first-of-type { margin-top: 1rem; }
 .about-note { padding: .9rem 1rem; border-left: 5px solid var(--orange); border-radius: 6px; background: var(--sand); }
 .about-home { display: inline-block; margin-top: .5rem; padding: .7rem 1rem; border-radius: 10px; background: var(--blue); color: #fff; font-weight: 800; text-decoration: none; }
+.daily-card { overflow: hidden; background: linear-gradient(145deg, #fff 0 72%, #fff4dc); }
+.daily-card::before { content: ""; display: block; height: 7px; margin: calc(-1 * clamp(1rem, 4vw, 1.6rem)) calc(-1 * clamp(1rem, 4vw, 1.6rem)) 1.15rem; background: linear-gradient(90deg, var(--orange), #f1b445, var(--blue)); }
+.daily-kicker { margin: .2rem 0 .55rem; color: var(--muted); font-weight: 750; }
+.daily-setup { margin: .7rem 0; font-size: 1.08rem; line-height: 1.55; }
+.daily-choices { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+.daily-choice { min-height: 76px; padding: .8rem .9rem; border: 2px solid var(--blue); border-radius: 13px; background: #fff; color: var(--ink); text-align: left; font-weight: 750; line-height: 1.3; cursor: pointer; }
+.daily-choice:hover, .daily-choice:focus-visible { transform: translateY(-2px); background: var(--sky); box-shadow: 0 6px 16px #176b8720; }
+.daily-choice.selected { min-height: auto; border-color: var(--orange); background: #fff8ed; color: var(--blue-dark); }
+.daily-result { margin-top: .85rem; padding: 1rem; border-left: 6px solid var(--orange); border-radius: 10px; background: var(--sand); }
+.daily-result p { margin: .35rem 0 0; font-size: 1.08rem; font-weight: 700; }
+.result-label { color: var(--orange); font-size: .75rem; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
+.daily-next-row { display: grid; grid-template-columns: 1.35fr 1fr; gap: .65rem; margin-top: .85rem; }
+.daily-next, .daily-full { min-height: 48px; display: grid; place-items: center; padding: .7rem .8rem; border-radius: 11px; font-weight: 850; text-align: center; cursor: pointer; }
+.daily-next { border: 0; background: var(--orange); color: #fff; }
+.daily-full { border: 2px solid var(--blue); background: #fff; color: var(--blue-dark); text-decoration: none; }
+.daily-test-note { margin: 1rem 0 0; color: var(--muted); font-size: .78rem; text-align: center; }
 @media (max-width: 430px) {
   main { width: min(100% - 1rem, 720px); margin-top: .65rem; }
   .card { border-radius: 14px; padding: 1rem; }
   .choice { padding: .72rem .8rem; }
   .control { flex: 1 1 auto; min-width: 68px; }
   .header-inner { align-items: flex-start; }
+  .daily-choices, .daily-next-row { grid-template-columns: 1fr; }
+  .daily-choice { min-height: 60px; }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .adventure-tile, .choice, .control { transition: .16s ease; }
+  .adventure-tile, .choice, .control, .daily-choice { transition: .16s ease; }
 }
