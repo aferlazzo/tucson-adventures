@@ -34,17 +34,18 @@
   <script src="/app.js" defer></script>
   <script src="/analytics.js" defer></script>
   <script>
-    // Keep the interface lean: story titles already identify each adventure.
-    const removeAdventureNumberLabels = () => {
+    // Keep the interface lean: the adventure name is all the list needs.
+    const simplifyAdventureLabels = () => {
       document.querySelectorAll('.adventure-tile strong').forEach(label => {
         label.textContent = label.textContent.replace(/^Adventure\s+\d+:\s*/i, '');
       });
+      document.querySelectorAll('.adventure-tile span').forEach(subtitle => subtitle.remove());
       document.querySelectorAll('#app .eyebrow').forEach(label => {
         if (/^Adventure\s+\d+$/i.test(label.textContent.trim())) label.remove();
       });
     };
-    new MutationObserver(removeAdventureNumberLabels).observe(document.getElementById('app'), {childList:true, subtree:true});
-    document.addEventListener('DOMContentLoaded', removeAdventureNumberLabels);
+    new MutationObserver(simplifyAdventureLabels).observe(document.getElementById('app'), {childList:true, subtree:true});
+    document.addEventListener('DOMContentLoaded', simplifyAdventureLabels);
   </script>
 </body>
 </html>
