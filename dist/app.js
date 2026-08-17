@@ -298,43 +298,6 @@ function controls() {
     <button class="control" data-action="end">End</button>
   </div></div>`;
 }
-
-function subwayVisual(sceneIndex) {
-  if (adventure !== adventure1) return "";
-  const labels = [
-    "CONGRESS STREET",
-    "EL CONQUISTADOR",
-    "CORTARO EXPRESS",
-    "NORMAL SERVICE",
-    "OLD TUCSON",
-    "12 MINUTES",
-    "PHOENIX BELOW"
-  ];
-  return `<div class="subway-animation subway-scene-${sceneIndex}" role="img" aria-label="Animated illustration for ${escapeText(adventure1.scenes[sceneIndex].title)}">
-    <div class="desert-sky"><span class="sun"></span><span class="cloud cloud-one"></span><span class="cloud cloud-two"></span></div>
-    <div class="tucson-silhouette"><span></span><span></span><span></span><span></span></div>
-    <div class="scene-label">${labels[sceneIndex]}</div>
-    <div class="street"><span class="road-line line-one"></span><span class="road-line line-two"></span></div>
-    <div class="pothole"><span class="pothole-rim"></span></div>
-    <div class="streetcar"><span class="car-window w1"></span><span class="car-window w2"></span><span class="car-window w3"></span><span class="car-door"></span><span class="wheel wheel-one"></span><span class="wheel wheel-two"></span></div>
-    <div class="underground">
-      <span class="tunnel-light light-one"></span><span class="tunnel-light light-two"></span><span class="tunnel-light light-three"></span><span class="tunnel-light light-four"></span>
-      <span class="rail rail-one"></span><span class="rail rail-two"></span>
-      <div class="historic-car">HISTORIC LINE</div>
-      <div class="route-map"><i></i><i></i><i></i><i></i></div>
-      <div class="model-home"><span></span></div>
-      <div class="repair-bar"><span></span></div>
-      <div class="phoenix-train">PHOENIX</div>
-    </div>
-    ${sceneIndex === 0 ? `<div class="story-beats" aria-hidden="true">
-      <span class="beat beat-one">9:17 A.M. — Congress Street</span>
-      <span class="beat beat-two">9:18 A.M. — One very deep pothole</span>
-      <span class="beat beat-three">The streetcar disappears.</span>
-      <span class="beat beat-four">Tucson has accidentally completed a subway.</span>
-    </div>` : ""}
-    <button class="replay-animation" type="button" data-action="replay-animation" aria-label="Replay this animation">Replay animation</button>
-  </div>`;
-}
 function renderHome(push = false) {
   if (push) history.pushState({}, "", "/");
   const tiles = adventures.map((item, index) => `<a class="adventure-tile" href="/adventures/${item.slug}/?fresh=1" data-start="${item.slug}"><strong>Adventure ${index + 1}: ${item.title}</strong><span>${item.subtitle}</span></a>`).join("");
@@ -365,7 +328,7 @@ function renderScene(push = false, position = "scene") {
     }
   }
   const adventureNumber = adventures.indexOf(adventure) + 1;
-  app.innerHTML = `<article class="card ${scene.final && selected !== null ? "ending" : ""}"><p class="eyebrow">Adventure ${adventureNumber}</p><h2>${scene.title}</h2>${subwayVisual(state.scene)}<div class="story">${scene.body}</div><p class="question">${scene.question}</p><div class="choices">${choices}</div>${result}${controls()}</article>`;
+  app.innerHTML = `<article class="card ${scene.final && selected !== null ? "ending" : ""}"><p class="eyebrow">Adventure ${adventureNumber}</p><h2>${scene.title}</h2><div class="story">${scene.body}</div><p class="question">${scene.question}</p><div class="choices">${choices}</div>${result}${controls()}</article>`;
   save(); positionView(position);
 }
 function restart() {
@@ -393,10 +356,7 @@ document.addEventListener("click", (event) => {
   const choiceButton = event.target.closest("[data-choice]");
   if (choiceButton && state.selected === null) { state.selected = Number(choiceButton.dataset.choice); renderScene(false, "result"); return; }
   const action = event.target.closest("[data-action]")?.dataset.action;
-  if (action === "replay-animation") {
-    const visual = event.target.closest(".subway-animation");
-    if (visual) visual.replaceWith(visual.cloneNode(true));
-  } else if (action === "continue") {
+  if (action === "continue") {
     state.history.push({ scene: state.scene, selected: state.selected });
     state.scene = adventure.scenes[state.scene].next; state.selected = null; renderScene();
   } else if (action === "back" && state.selected !== null) {
