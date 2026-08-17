@@ -45,8 +45,22 @@
         if (/^Adventure\s+\d+$/i.test(label.textContent.trim())) label.remove();
       });
     };
-    new MutationObserver(simplifyAdventureLabels).observe(document.getElementById('app'), {childList:true, subtree:true});
-    document.addEventListener('DOMContentLoaded', simplifyAdventureLabels);
+
+    // Correct the mayor pronouns in the pothole adventure without replacing app.js.
+    const correctMayorPronouns = () => {
+      document.querySelectorAll('.consequence p').forEach(paragraph => {
+        const oldText = 'He promises full transparency, then discovers every relevant file has been classified as routine utility work. Even he looks impressed.';
+        const newText = 'She promises full transparency, then discovers every relevant file has been classified as routine utility work. Even she looks impressed.';
+        if (paragraph.textContent.trim() === oldText) paragraph.textContent = newText;
+      });
+    };
+
+    const refreshUiFixes = () => {
+      simplifyAdventureLabels();
+      correctMayorPronouns();
+    };
+    new MutationObserver(refreshUiFixes).observe(document.getElementById('app'), {childList:true, subtree:true});
+    document.addEventListener('DOMContentLoaded', refreshUiFixes);
   </script>
 </body>
 </html>
