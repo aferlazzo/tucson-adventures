@@ -37,7 +37,7 @@ const adventure1 = {
         ["A", "Open the locked cabinet.", "Inside is a 900-page study recommending that the city study whether to preserve the completed system. The cover says FINAL DRAFT 7."],
         ["B", "Follow the Cortaro Express tunnel first.", "The rails are intact, the signals still have power, and the first sign reads CORTARO—17 MINUTES. Several witnesses accuse it of showing off."],
         ["C", "Inspect the old control panel before moving any trains.", "Most switches are clearly labeled. One large green button simply says RESUME NORMAL SERVICE."],
-        ["D", "Ask the mayor to explain the missing public records.", "He promises full transparency, then discovers every relevant file has been classified as routine utility work. Even he looks impressed."]
+        ["D", "Ask the mayor to explain the missing public records.", "She promises full transparency, then discovers every relevant file has been classified as routine utility work. Even she looks impressed."]
       ],
       next: 3
     },
