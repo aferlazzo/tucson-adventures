@@ -511,3 +511,67 @@ const adventure11 = {
     }
   ]
 };
+
+const adventure12 = {
+  slug: "signs-of-trouble",
+  title: "Signs of Trouble",
+  subtitle: "You were only trying to cross northwest Tucson. The street signs had other plans.",
+  scenes: [
+    {
+      title: "Cortaro, Cortaro Farms, Magee—Pick One",
+      body: `<p>You are driving west on Cortaro Road with one modest goal: remain on Cortaro Road.</p><p>At the freeway, the signs call it <strong>Cortaro Farms Road</strong>. A little farther east, the same strip of pavement introduces itself as <strong>Magee Road</strong>.</p><p>Your navigation app says, “Continue straight.” The street sign says you have already changed roads twice without turning.</p><p>A cardboard sign beneath it adds:</p><div class="sign">ROAD CURRENTLY EXPERIENCING AN IDENTITY EVENT</div>`,
+      question: "Which authority do you trust?",
+      choices: [
+        ["A","Trust the navigation app.","It recalculates while insisting you never left the route it just renamed."],
+        ["B","Trust the street signs.","Three consecutive signs give three answers. Democracy has reached asphalt."],
+        ["C","Follow the car ahead.","Its driver is following you, creating Tucson's first closed-loop navigation system."],
+        ["D","Stop and ask a local.","She says, “It depends which side of the freeway remembers naming it.”"]
+      ], next: 1
+    },
+    {
+      title: "The Shannon Disappearance",
+      body: `<p>You turn south onto Shannon Road. This feels safe. Shannon is a perfectly respectable name.</p><p>Then Shannon ends, resumes, wanders, and returns with the confidence of a road that assumes you were the one who disappeared.</p><p>A county crew is installing a new sign. The worker holds four possible names and asks you to choose one before lunch.</p>`,
+      question: "What name do you select?",
+      choices: [
+        ["A","Keep Shannon Road.","The crew agrees, but only for the next mile."],
+        ["B","Rename it Still Shannon.","The county rejects the word Still as an unverifiable claim."],
+        ["C","Call it Lost Driver Boulevard.","Your navigation app immediately marks it as a toll road."],
+        ["D","Leave the sign blank.","Everyone recognizes this as the most honest option and starts taking pictures."]
+      ], next: 2
+    },
+    {
+      title: "Camino de Oeste Objects",
+      body: `<p>You reach Camino de Oeste, which seems determined to prove that a road can head north while being named “Road of the West.”</p><p>At the edge of Picture Rocks, a barricade blocks the lane. Beside it sits a pile of unused Marana street signs.</p><p>A handwritten notice explains:</p><div class="sign">PICTURE ROCKS HAS DECLINED THESE ROAD NAMES<br><small>Please return them to the municipality that overprinted them.</small></div>`,
+      question: "What do you do with the rejected signs?",
+      choices: [
+        ["A","Return them to Marana.","Marana says all sales are final and offers store credit toward a roundabout."],
+        ["B","Install them where they seem useful.","Within an hour, every dirt road has a formal name and none has an address."],
+        ["C","Let Picture Rocks rename everything.","The first proposal is Not Marana Road. It passes unanimously."],
+        ["D","Call the recycling department.","A truck arrives carrying even more signs, which feels less like recycling than reproduction."]
+      ], next: 3
+    },
+    {
+      title: "The Municipal Sign Exchange",
+      body: `<p>You uncover the arrangement: Marana printed too many street signs and quietly distributed the leftovers to neighboring communities.</p><p>Unfortunately, nobody received the matching roads.</p><p>A public meeting is called inside a temporary traffic circle. Officials propose a regional naming standard: every road will keep one name until the next major intersection, wash, municipal border, historical disagreement, or lunch break.</p>`,
+      question: "Which solution do you support?",
+      choices: [
+        ["A","Give every road one permanent name.","The motion fails because nobody can agree which existing name was first."],
+        ["B","Put every name on every sign.","The first prototype is eighteen feet tall and requires its own zoning hearing."],
+        ["C","Name roads by destination.","Every road becomes This Way to Costco, including the ones going away from Costco."],
+        ["D","Let navigation apps settle it.","Google and Apple choose different names and schedule a mapping duel at sunset."]
+      ], next: 4
+    },
+    {
+      title: "You Have Arrived Somewhere",
+      body: `<p>Two hours later, you reach the address where you started.</p><p>Your odometer says you drove thirty-seven miles. Your navigation history says you traveled on Cortaro, Cortaro Farms, Magee, Shannon, Camino de Oeste, and one road known only as <strong>Continue Straight</strong>.</p><p>You never made a wrong turn. You merely experienced every correct name at once.</p>`,
+      question: "How should Tucson mark the route?",
+      final: true,
+      choices: [
+        ["A","Install a sign reading YOU ARE PROBABLY HERE.","It becomes the most trusted directional sign in Pima County.","A Qualified Success","Nobody knows where they are, but expectations are finally accurate."],
+        ["B","Declare the entire trip a scenic loop.","Tourists love it because they assume the confusion is curated.","The Northwest Passage","The brochure promises thirty-seven miles and no unnecessary certainty."],
+        ["C","Publish the official list of road names.","The list is obsolete before the ink dries because one road has joined Oro Valley.","Government Transparency","Everything is explained. Nothing is clarified."],
+        ["D","Keep driving until the names make sense.","You cross the county line and discover the road has changed names out of professional courtesy.","Signs of Trouble","You got lost without ever leaving Google Maps."]
+      ]
+    }
+  ]
+};
