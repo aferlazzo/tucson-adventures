@@ -519,7 +519,7 @@ const adventure12 = {
   scenes: [
     {
       title: "Cortaro, Cortaro Farms, Magee—Pick One",
-      body: `<p>You are driving east on Cortaro Road with one modest goal: remain on Cortaro Road.</p><p>At the freeway, the signs call it <strong>Cortaro Farms Road</strong>. Across the freeway, the same strip of pavement introduces itself as <strong>Magee Road</strong>.</p><p>Your navigation app says, “Continue straight.” The street sign says you have already changed roads twice without turning.</p><p>A cardboard sign beneath it adds:</p><div class="sign">ROAD CURRENTLY EXPERIENCING AN IDENTITY CRISIS</div>`,
+      body: `<p>You are driving east on Cortaro Road with one modest goal: remain on Cortaro Road.</p><p>At the freeway, the signs call it <strong>Cortaro Farms Road</strong>. Farther east, the same strip of pavement introduces itself as <strong>Magee Road</strong>.</p><p>Your navigation app says, “Continue straight.” The street sign says you have already changed roads twice without turning.</p><p>A cardboard sign beneath it adds:</p><div class="sign">ROAD CURRENTLY EXPERIENCING AN IDENTITY CRISIS</div>`,
       question: "Which authority do you trust?",
       choices: [
         ["A","Trust the navigation app.","It recalculates while insisting you never left the route it just renamed."],
@@ -530,7 +530,7 @@ const adventure12 = {
     },
     {
       title: "Turn Right on Thornydale",
-      body: `<p>You turn right onto Thornydale Road and relax. Thornydale is a name. North is a direction. For several miles, the two appear to cooperate.</p><p>Then, without asking permission, Thornydale becomes <strong>River Road</strong>.</p><p>You did not turn. The road did.</p><p>River bends east, wanders across town, and eventually delivers you to <strong>Oracle Road</strong> as though this had been the plan all along.</p><p>A visitor from Canada pulls alongside and points nervously toward La Cañada Drive.</p><p>“Does that take us back to Canada?”</p><p>“No,” you say. “But at least Canadians can figure that out before reaching Nogales.”</p>`,
+      body: `<p>You turn right onto Thornydale Road and relax. Thornydale is a name. South is a direction. For several miles, the two appear to cooperate.</p><p>At River Road, your navigation app tells you to turn left. You follow <strong>River Road</strong> east as it bends and wanders across town.</p><p>Eventually, River delivers you to <strong>Oracle Road</strong> as though this had been the plan all along.</p><p>A visitor from Canada pulls alongside and points nervously toward La Cañada Drive.</p><p>“Does that take us back to Canada?”</p><p>“No,” you say. “But at least Canadians can figure that out before reaching Nogales.”</p>`,
       question: "Who designed this route?",
       choices: [
         ["A","Someone trying to confuse visitors.","The tourism office denies this while selling a map titled GOOD LUCK."],
@@ -541,7 +541,7 @@ const adventure12 = {
     },
     {
       title: "The Shannon Disappearance",
-      body: `<p>You turn south onto Shannon Road. This feels safe. Shannon is a perfectly respectable name.</p><p>Then Shannon ends, resumes, wanders, and returns with the confidence of a road that assumes you were the one who disappeared.</p><p>A county crew is installing a new sign. The worker holds four possible names and asks you to choose one before lunch.</p>`,
+      body: `<p>After reaching Oracle, your navigation app sends you back west on River Road and then south onto Shannon Road. This feels safe. Shannon is a perfectly respectable name.</p><p>Then Shannon ends, resumes, wanders, and returns with the confidence of a road that assumes you were the one who disappeared.</p><p>A county crew is installing a new sign. The worker holds four possible names and asks you to choose one before lunch.</p>`,
       question: "What name do you select?",
       choices: [
         ["A","Keep Shannon Road.","The crew agrees, but only for the next mile."],
