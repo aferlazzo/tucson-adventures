@@ -515,7 +515,7 @@ const adventure11 = {
 const adventure12 = {
   slug: "signs-of-trouble",
   title: "Signs of Trouble",
-  subtitle: "You were only trying to cross northwest Tucson. The street signs had other plans.",
+  subtitle: "You were only trying to cross Tucson. The street signs had other plans.",
   scenes: [
     {
       title: "Cortaro, Cortaro Farms, Magee—Pick One",
@@ -540,48 +540,48 @@ const adventure12 = {
       ], next: 2
     },
     {
-      title: "The Shannon Disappearance",
-      body: `<p>After reaching Oracle, your navigation app sends you back west on River Road and then south onto Shannon Road. This feels safe. Shannon is a perfectly respectable name.</p><p>Then Shannon ends, resumes, wanders, and returns with the confidence of a road that assumes you were the one who disappeared.</p><p>A county crew is installing a new sign. The worker holds four possible names and asks you to choose one before lunch.</p>`,
-      question: "What name do you select?",
+      title: "Grant Requests a New Identity",
+      body: `<p>The app sends you south on Oracle, then west on <strong>Grant Road</strong>.</p><p>Grant behaves like an ordinary road until Silverbell. There, without a turn or farewell, it becomes <strong>Ironwood Hills Drive</strong>.</p><p>The pavement has not changed. The scenery has barely changed. Only the road's confidence has improved.</p><div class="sign">GRANT ROAD HAS LEFT THE CITY<br><small>Please address it by its new professional name.</small></div>`,
+      question: "How do you respond to the rebranding?",
       choices: [
-        ["A","Keep Shannon Road.","The crew agrees, but only for the next mile."],
-        ["B","Rename it Still Shannon.","The county rejects the word Still as an unverifiable claim."],
-        ["C","Call it Lost Driver Boulevard.","Your navigation app immediately marks it as a toll road."],
-        ["D","Leave the sign blank.","Everyone recognizes this as the most honest option and starts taking pictures."]
+        ["A","Keep calling it Grant.","Your navigation app corrects you in the tone of a disappointed teacher."],
+        ["B","Use Ironwood Hills immediately.","The road appreciates your support during this transition."],
+        ["C","Ask what happened at Silverbell.","Silverbell declines to discuss personnel matters."],
+        ["D","Turn around before another name appears.","The eastbound pavement changes back to Grant and pretends nothing happened."]
       ], next: 3
     },
     {
-      title: "Camino de Oeste Objects",
-      body: `<p>You reach Camino de Oeste, which seems determined to prove that a road can head north while being named “Road of the West.”</p><p>At the edge of Picture Rocks, a barricade blocks the lane. Beside it sits a pile of unused Marana street signs.</p><p>A handwritten notice explains:</p><div class="sign">PICTURE ROCKS HAS DECLINED THESE ROAD NAMES<br><small>Please return them to the municipality that overprinted them.</small></div>`,
-      question: "What do you do with the rejected signs?",
+      title: "Four Names Toward One Mountain",
+      body: `<p>Ironwood Hills ends at Camino de Oeste, so you turn south. Soon <strong>Speedway Boulevard</strong> and <strong>Anklam Road</strong> converge ahead.</p><p>The two roads merge and emerge as <strong>Gates Pass Road</strong>. West of the pass, the same route becomes <strong>Saguaro Road</strong>.</p><p>You have now watched two roads enter, one road leave, and that road change its name before the dust settled.</p><p>A warning sign says:</p><div class="sign">MERGE AHEAD<br><small>Road names must settle their own differences.</small></div>`,
+      question: "What do you call the road you are on?",
       choices: [
-        ["A","Return them to Marana.","Marana says all sales are final and offers store credit toward a roundabout."],
-        ["B","Install them where they seem useful.","Within an hour, every dirt road has a formal name and none has an address."],
-        ["C","Let Picture Rocks rename everything.","The first proposal is Not Marana Road. It passes unanimously."],
-        ["D","Call the recycling department.","A truck arrives carrying even more signs, which feels less like recycling than reproduction."]
+        ["A","Speedway.","A bicyclist points out that nobody here should be speeding."],
+        ["B","Anklam.","The left half of the pavement agrees. The right half files an objection."],
+        ["C","Gates Pass.","The road accepts this until it reaches the other side of the mountain."],
+        ["D","Saguaro.","Three thousand actual saguaros refuse responsibility."]
       ], next: 4
     },
     {
-      title: "The Municipal Sign Exchange",
-      body: `<p>You uncover the arrangement: Marana printed too many street signs and quietly distributed the leftovers to neighboring communities.</p><p>Unfortunately, nobody received the matching roads.</p><p>A public meeting is called inside a temporary traffic circle. Officials propose a regional naming standard: every road will keep one name until the next major intersection, wash, municipal border, historical disagreement, or lunch break.</p>`,
-      question: "Which solution do you support?",
+      title: "Tucson Invents a Direction",
+      body: `<p>Your navigation app finally guides you back toward central Tucson, where the grid meets a diagonal road near Aviation Parkway.</p><p>The street sign identifies it as a <strong>STRAVENUE</strong>.</p><p>In Tucson, streets generally run east and west. Avenues generally run north and south. This road runs diagonally, so somebody combined the words and declared the problem solved.</p><p>Your app pauses long enough to look up the abbreviation.</p><div class="sign">STRAV<br><small>Neither street nor avenue. Please lower your expectations.</small></div>`,
+      question: "Does “stravenue” clarify anything?",
       choices: [
-        ["A","Give every road one permanent name.","The motion fails because nobody can agree which existing name was first."],
-        ["B","Put every name on every sign.","The first prototype is eighteen feet tall and requires its own zoning hearing."],
-        ["C","Name roads by destination.","Every road becomes This Way to Costco, including the ones going away from Costco."],
-        ["D","Let navigation apps settle it.","Google and Apple choose different names and schedule a mapping duel at sunset."]
+        ["A","Yes. It is perfectly Tucson.","The city accepts this as the highest available standard of clarity."],
+        ["B","No. Pick street or avenue.","The road continues diagonally out of spite."],
+        ["C","Ask whether it counts as a shortcut.","Only if your destination is uncertainty."],
+        ["D","Request an ordinary road.","Navigation offers I-10 during rush hour. You withdraw the request."]
       ], next: 5
     },
     {
       title: "You Have Arrived Somewhere",
-      body: `<p>Two hours later, you reach the address where you started.</p><p>Your odometer says you drove thirty-seven miles. Your navigation history says you traveled on Cortaro, Cortaro Farms, Magee, Thornydale, River, Oracle, Shannon, Camino de Oeste, and one road known only as <strong>Continue Straight</strong>.</p><p>La Cañada never reached Canada. You never made a wrong turn. You merely experienced every correct name at once.</p>`,
+      body: `<p>Two hours later, you reach the address where you started.</p><p>Your navigation history says you traveled on Cortaro, Cortaro Farms, Magee, Thornydale, River, Oracle, Grant, Ironwood Hills, Speedway, Anklam, Gates Pass, Saguaro, and one stravenue whose full name exceeded the available memory.</p><p>La Cañada never reached Canada. You never made a wrong turn. You merely experienced every correct name in the wrong order.</p>`,
       question: "How should Tucson mark the route?",
       final: true,
       choices: [
         ["A","Install a sign reading YOU ARE PROBABLY HERE.","It becomes the most trusted directional sign in Pima County.","A Qualified Success","Nobody knows where they are, but expectations are finally accurate."],
-        ["B","Declare the entire trip a scenic loop.","Tourists love it because they assume the confusion is curated.","The Northwest Passage","The brochure promises thirty-seven miles and no unnecessary certainty."],
-        ["C","Publish the official list of road names.","The list is obsolete before the ink dries because one road has joined Oro Valley.","Government Transparency","Everything is explained. Nothing is clarified."],
-        ["D","Keep driving until the names make sense.","You cross the county line and discover the road has changed names out of professional courtesy.","Signs of Trouble","You got lost without ever leaving Google Maps."]
+        ["B","Declare the entire trip a scenic loop.","Tourists love it because they assume the confusion is curated.","The Northwest Passage","The brochure promises beautiful scenery and no unnecessary certainty."],
+        ["C","Give every road one permanent name.","The proposal dies when officials discover the roads have already formed separate identities.","Government Restraint","For once, Tucson decides not to add another sign."],
+        ["D","Keep driving until the names make sense.","Tanque Verde becomes Redington Road and then the pavement disappears.","Signs of Trouble","The road provides its own closing argument."]
       ]
     }
   ]
