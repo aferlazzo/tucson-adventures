@@ -586,3 +586,78 @@ const adventure12 = {
     }
   ]
 };
+
+const adventure13 = {
+  slug: "the-address-that-isnt-in-tucson",
+  title: "The Address That Isn’t in Tucson",
+  subtitle: "Your mail says Tucson. Your permit says Marana. Pima County would like your parcel number before confirming you exist.",
+  scenes: [
+    {
+      title: "One Modest Shade Structure",
+      body: `<p>You decide to build a twelve-foot shade structure in your backyard, an extravagant Tucson luxury commonly known elsewhere as “not standing directly inside the sun.”</p><p>The permit form asks for your city. You type <strong>Tucson</strong>, exactly as it appears on every piece of mail you have received for ten years.</p><p>The City of Tucson website responds:</p><div class="sign">ADDRESS NOT FOUND WITHIN CITY LIMITS<br><small>Please reconsider where you live.</small></div><p>You look outside. Your house is still there.</p>`,
+      question: "How do you establish your location?",
+      choices: [
+        ["A","Enter the address again.","The website admires your persistence and rejects your house in a slightly darker shade of red."],
+        ["B","Check a map.","The map places you in Tucson, Marana, and an unincorporated area depending on the zoom level."],
+        ["C","Call the City of Tucson.","A helpful employee confirms that your Tucson address is not in Tucson. She says this without laughing, proving extensive training."],
+        ["D","Build the shade structure anyway.","A permit inspector materializes before the first post hole is finished. You ask which government sent him. He checks his badge."]
+      ], next: 1
+    },
+    {
+      title: "Tucson for Mailing Purposes",
+      body: `<p>The post office confirms that your mailing address is Tucson.</p><p>The City of Tucson confirms that your property is not Tucson.</p><p>An online parcel map says your jurisdiction is Marana. A second map says Pima County. A third map is still loading imagery from 2009, when your backyard was apparently a shrub.</p><p>A temporary boundary sign appears beside your mailbox:</p><div class="sign">WELCOME TO TUCSON<br><small>For mailing purposes only.</small></div>`,
+      question: "Who do you contact next?",
+      choices: [
+        ["A","Call Marana.","Marana asks whether you are inside the town limits or merely emotionally adjacent to them."],
+        ["B","Call Pima County.","The county asks for your parcel number. You provide your street address. The county repeats its request more slowly."],
+        ["C","Call the post office.","The clerk explains that mail delivery is not a constitutional opinion about municipal government."],
+        ["D","Ask a neighbor.","She says she lives in Tucson, pays Marana taxes, receives county services, and votes wherever the ballot tells her."]
+      ], next: 2
+    },
+    {
+      title: "You Are Now a Parcel",
+      body: `<p>Pima County locates your property after you recite a parcel number long enough to unlock a submarine.</p><p>“Good news,” the representative says. “Your land definitely exists.”</p><p>Your house is assigned a jurisdiction, postal city, school district, fire district, water provider, sanitation contractor, and voting precinct. No two boundaries appear to have met socially.</p><p>The representative emails a diagram. Your kitchen and garage are the same color, which feels encouraging.</p>`,
+      question: "Which identity matters for the permit?",
+      choices: [
+        ["A","The postal city.","The permit office explains that the post office may deliver a pergola but cannot authorize one."],
+        ["B","The parcel jurisdiction.","Correct—until the map refreshes and moves the boundary six pixels through your recycling bin."],
+        ["C","The tax authority.","Everyone agrees taxes are jurisdictionally valid no matter where you think you live."],
+        ["D","The fire district.","The fire district will protect the shade structure once somebody else permits it."]
+      ], next: 3
+    },
+    {
+      title: "The Jurisdiction Potluck",
+      body: `<p>You schedule a conference call with Tucson, Marana, Pima County, the post office, the fire district, and the company that collects your trash.</p><p>Every participant explains a different boundary. Each explanation is accurate. Together they describe a house rotating slowly through local government.</p><p>The trash company remains silent until someone says “annexation,” then announces that annexed recycling is collected on alternate Thursdays unless the month contains a fifth Tuesday.</p><div class="sign">YOUR CALL IS IMPORTANT<br><small>It has been transferred to the appropriate century.</small></div>`,
+      question: "How do you force a decision?",
+      choices: [
+        ["A","Ask one agency to take responsibility.","Everyone experiences sudden microphone trouble."],
+        ["B","Share your screen and display the parcel map.","Six professionals begin drawing six different circles around your house."],
+        ["C","Ask where to send the permit fee.","Marana unmutes instantly. The meeting has found its sense of direction."],
+        ["D","Threaten to cancel the project.","All agencies approve this option without requiring a form."]
+      ], next: 4
+    },
+    {
+      title: "The Republic of One Parcel",
+      body: `<p>After four transfers and one hold recording performed entirely on pan flute, you propose declaring your property an independent municipality.</p><p>Your spouse is appointed mayor because she left the room at the wrong moment. The dog becomes zoning administrator after sitting on the site plan.</p><p>The new nation possesses one house, two residents, three trash bins, and a disputed northern border running behind the air conditioner.</p><p>Your first council meeting begins beneath the unfinished shade structure.</p>`,
+      question: "What is the municipality’s first ordinance?",
+      choices: [
+        ["A","Approve the shade structure.","The dog stamps the plan with one paw. It is the clearest approval you have received."],
+        ["B","Adopt Tucson as the postal city.","The measure passes because nobody wants to notify every catalog company."],
+        ["C","Annex the neighbor’s pool.","The neighbor mobilizes two patio umbrellas and demands international observers."],
+        ["D","Require all boundaries to be visible.","Survey crews paint fourteen overlapping lines across the driveway and declare transparency achieved."]
+      ], next: 5
+    },
+    {
+      title: "Permit Issued Somewhere",
+      body: `<p>A week later, an official envelope arrives.</p><p>It is addressed to your home in <strong>Tucson</strong>. Inside is a permit issued by the <strong>Town of Marana</strong>, identified by a <strong>Pima County</strong> parcel number.</p><p>The permit authorizes construction subject to inspection by an office whose phone number routes back to the first website.</p><p>You stand in the backyard holding the document. The afternoon temperature is 108 degrees. The unbuilt shade structure has become less of an improvement and more of a rescue operation.</p>`,
+      question: "How does the jurisdiction crisis end?",
+      final: true,
+      choices: [
+        ["A","Build the shade structure exactly as approved.","The inspector signs off while standing in its shade and refuses to discuss which city he drove from.","The Pergola Accord","Three governments recognize the structure. None admits recognizing one another."],
+        ["B","Frame the permit instead.","It hangs beside your property tax bill as proof that local government once agreed long enough to print something.","Documented Existence","Your house is still difficult to locate, but it now has paperwork."],
+        ["C","Keep the independent municipality.","Your first tax bill arrives from yourself. It includes a convenience fee.","The Republic of Backyard","The nation survives six days before requesting county trash service."],
+        ["D","Move somewhere with simpler boundaries.","You find a house listed in Tucson with an Oro Valley school district and a Marana water provider.","Manifest Destiny Denied","The realtor hands you a parcel map. You return to your car without speaking."]
+      ]
+    }
+  ]
+};
