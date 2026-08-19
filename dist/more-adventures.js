@@ -661,3 +661,78 @@ const adventure13 = {
     }
   ]
 };
+
+const adventure14 = {
+  slug: "biosphere-2-misplaced-the-oxygen",
+  title: "Biosphere 2 Has Misplaced the Oxygen Again",
+  subtitle: "A one-hour tour becomes a two-year mission after the building mistakes visitors for scientists.",
+  scenes: [
+    {
+      title: "Please Exit Through the Airlock",
+      body: `<p>Your Biosphere 2 guide leads twelve visitors through an airlock during what she calls “a brief demonstration of closed-system living.”</p><p>The outer door seals. The inner door opens. Somewhere, an elderly computer wakes up and mistakes the tour group for a research crew.</p><div class="sign">CLOSED-ECOLOGY MISSION ACTIVE<br><small>Estimated duration: 730 days</small></div><p>The guide presses the exit button. The computer replies, “Outside assistance would compromise your experience.”</p><p>A tourist wearing sandals asks whether lunch is included.</p>`,
+      question: "What do you do first?",
+      choices: [
+        ["A","Find the emergency release.","It is behind glass labeled BREAK ONLY IF SCIENTIFIC INTEGRITY IS NO LONGER A CONCERN. Nobody wants to be first."],
+        ["B","Call the control room.","Control congratulates the new crew and asks everyone to submit research objectives before dinner."],
+        ["C","Explain that you bought a one-hour tour.","The computer extends the mission by one hour to compensate for the misunderstanding."],
+        ["D","Ask about lunch.","The guide points toward six banana plants and lowers her voice. “Those are now strategic resources.”"]
+      ], next: 1
+    },
+    {
+      title: "The Oxygen Budget",
+      body: `<p>The oxygen display drops from 20.9 percent to 20.8.</p><p>A recorded announcement advises everyone to breathe normally but “with greater institutional awareness.”</p><p>The guide explains that oxygen famously declined during the original mission. Soil microbes consumed it, and exposed concrete helped hide the resulting carbon dioxide.</p><p>Everyone looks at the walls.</p><p>The walls offer no comment, which is exactly what guilty concrete would do.</p>`,
+      question: "How should the group conserve oxygen?",
+      choices: [
+        ["A","Stop unnecessary talking.","Three visitors immediately begin debating what qualifies as unnecessary."],
+        ["B","Increase plant photosynthesis.","The rainforest requests better lighting and a written definition of overtime."],
+        ["C","Interrogate the concrete.","You tap the wall. The oxygen meter drops another tenth, which feels evasive."],
+        ["D","Open the emergency oxygen valve.","A warning says imported oxygen must be declared at Biosphere customs."]
+      ], next: 2
+    },
+    {
+      title: "The Biomes Reorganize",
+      body: `<p>The artificial desert is becoming humid. A rainforest vine has crossed two habitat boundaries and is negotiating access to the kitchen.</p><p>Most carefully selected insects have vanished. Ants and cockroaches have formed a highly efficient coalition and now control agricultural distribution.</p><p>The banana crop is guarded by ants wearing crumbs.</p><div class="sign">BIOME REALIGNMENT IN PROGRESS<br><small>Nature has reviewed the original plan.</small></div>`,
+      question: "Which ecological problem gets priority?",
+      choices: [
+        ["A","Restore the desert.","The dehumidifier drains into the ocean, which files a formal complaint about salinity."],
+        ["B","Contain the rainforest vine.","Cutting one tendril produces three more. The vine has interpreted pruning as encouragement."],
+        ["C","Negotiate with the ants.","They demand sugar, territorial recognition, and one seat on the research committee."],
+        ["D","Eliminate the cockroaches.","The computer rejects your proposal because they are now the mission's most successful livestock."]
+      ], next: 3
+    },
+    {
+      title: "The Crew Divides",
+      body: `<p>By afternoon, the twelve visitors have split into factions.</p><p>The <strong>Open the Door Group</strong> wants air, lunch, and the return of personal liberty.</p><p>The <strong>Protect the Experiment Group</strong> has designed mission patches and refuses to waste this opportunity merely because nobody volunteered.</p><p>A third faction consists of one child who has befriended the ants and now possesses most of the crackers.</p>`,
+      question: "Who should lead the accidental mission?",
+      choices: [
+        ["A","The tour guide.","She accepts command while quietly searching her employee handbook for the word mutiny."],
+        ["B","The person with the mission patches.","He promotes himself to commander and immediately schedules a documentary interview."],
+        ["C","The child controlling the crackers.","The agricultural economy stabilizes under a strict one-cookie standard."],
+        ["D","Let everyone vote.","The ants arrive with 40,000 unverified ballots."]
+      ], next: 4
+    },
+    {
+      title: "Outside Air, Locally Sourced",
+      body: `<p>The oxygen level reaches 19.7 percent. Control offers to inject outside oxygen and unlock the doors.</p><p>Unfortunately, accepting outside help would end the closed-system experiment and reduce the mission's scientific purity from 100 percent to “still more controlled than most family vacations.”</p><p>The computer presents a compromise:</p><div class="sign">EMERGENCY OXYGEN AVAILABLE<br><small>May be classified as locally sourced atmospheric research material.</small></div>`,
+      question: "Do you accept the oxygen?",
+      choices: [
+        ["A","Yes. Breathing outranks branding.","Fresh oxygen enters. The mission patch committee adds a tiny asterisk nobody can see from Earth."],
+        ["B","No. Protect the experiment.","The sandals tourist begins licking a rainforest leaf and scientific purity loses the moral high ground."],
+        ["C","Accept it but rename it.","The official report records an internal relocation of regional atmosphere."],
+        ["D","Open the doors instead.","The computer asks whether you are certain you want to expose Biosphere 2 to Biosphere 1."]
+      ], next: 5
+    },
+    {
+      title: "Biosphere 1 Fails Inspection",
+      body: `<p>The doors finally open. Everyone prepares to leave.</p><p>Then the computer displays satellite images of drought, smoke, disappearing habitat, overheated cities, and several meetings about scheduling future meetings.</p><p>A final message appears:</p><div class="quote">BIOSPHERE 2 ASSESSMENT COMPLETE.<br>BEGINNING RECERTIFICATION OF BIOSPHERE 1.</div><p>The guide explains that Biosphere 1 is Earth.</p><p>The computer asks who has been maintaining it.</p><p>Nobody reaches for the microphone.</p>`,
+      question: "What does humanity tell the inspector?",
+      final: true,
+      choices: [
+        ["A","“We thought someone else was handling it.”","The computer accepts this as the most thoroughly documented human response.","Deferred Planetary Maintenance","Earth receives a temporary occupancy permit and thirty days to clear the atmosphere."],
+        ["B","“We have formed a committee.”","The computer requests evidence of progress. Humanity submits a logo and three postponed agendas.","The Blue-Ribbon Biosphere","Earth remains operational pending a report nobody has authority to release."],
+        ["C","“Can we move into Biosphere 2?”","The ants reject the application because humanity lacks references and has a history of damaging rentals.","No Vacancy","The backup planet has reviewed the original tenant."],
+        ["D","“We will fix Biosphere 1.”","The computer unlocks the exit and schedules a follow-up inspection. Nobody asks whether 730 days might have been easier.","Return to Earth","You leave with oxygen, a mission patch, and the uncomfortable feeling that the experiment followed you outside."]
+      ]
+    }
+  ]
+};
