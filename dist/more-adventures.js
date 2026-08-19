@@ -519,7 +519,7 @@ const adventure12 = {
   scenes: [
     {
       title: "Cortaro, Cortaro Farms, Magee—Pick One",
-      body: `<p>You are driving west on Cortaro Road with one modest goal: remain on Cortaro Road.</p><p>At the freeway, the signs call it <strong>Cortaro Farms Road</strong>. A little farther east, the same strip of pavement introduces itself as <strong>Magee Road</strong>.</p><p>Your navigation app says, “Continue straight.” The street sign says you have already changed roads twice without turning.</p><p>A cardboard sign beneath it adds:</p><div class="sign">ROAD CURRENTLY EXPERIENCING AN IDENTITY EVENT</div>`,
+      body: `<p>You are driving west on Cortaro Road with one modest goal: remain on Cortaro Road.</p><p>At the freeway, the signs call it <strong>Cortaro Farms Road</strong>. A little farther east, the same strip of pavement introduces itself as <strong>Magee Road</strong>.</p><p>Your navigation app says, “Continue straight.” The street sign says you have already changed roads twice without turning.</p><p>A cardboard sign beneath it adds:</p><div class="sign">ROAD CURRENTLY EXPERIENCING AN IDENTITY CRISIS</div>`,
       question: "Which authority do you trust?",
       choices: [
         ["A","Trust the navigation app.","It recalculates while insisting you never left the route it just renamed."],
