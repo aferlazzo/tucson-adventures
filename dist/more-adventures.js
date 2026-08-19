@@ -529,6 +529,17 @@ const adventure12 = {
       ], next: 1
     },
     {
+      title: "Turn Right on Thornydale",
+      body: `<p>You turn right onto Thornydale Road and relax. Thornydale is a name. North is a direction. For several miles, the two appear to cooperate.</p><p>Then, without asking permission, Thornydale becomes <strong>River Road</strong>.</p><p>You did not turn. The road did.</p><p>River bends east, wanders across town, and eventually delivers you to <strong>Oracle Road</strong> as though this had been the plan all along.</p><p>A visitor from Canada pulls alongside and points nervously toward La Cañada Drive.</p><p>“Does that take us back to Canada?”</p><p>“No,” you say. “But at least Canadians can figure that out before reaching Nogales.”</p>`,
+      question: "Who designed this route?",
+      choices: [
+        ["A","Someone trying to confuse visitors.","The tourism office denies this while selling a map titled GOOD LUCK."],
+        ["B","Someone who was naming roads while driving them.","Each name change marks the exact place the planner forgot what road he started on."],
+        ["C","The roads themselves.","Thornydale wanted riverfront property. River wanted an oracle. Oracle refuses to comment."],
+        ["D","Nobody. It simply evolved.","This is the official explanation, which somehow sounds more sinister."]
+      ], next: 2
+    },
+    {
       title: "The Shannon Disappearance",
       body: `<p>You turn south onto Shannon Road. This feels safe. Shannon is a perfectly respectable name.</p><p>Then Shannon ends, resumes, wanders, and returns with the confidence of a road that assumes you were the one who disappeared.</p><p>A county crew is installing a new sign. The worker holds four possible names and asks you to choose one before lunch.</p>`,
       question: "What name do you select?",
@@ -537,7 +548,7 @@ const adventure12 = {
         ["B","Rename it Still Shannon.","The county rejects the word Still as an unverifiable claim."],
         ["C","Call it Lost Driver Boulevard.","Your navigation app immediately marks it as a toll road."],
         ["D","Leave the sign blank.","Everyone recognizes this as the most honest option and starts taking pictures."]
-      ], next: 2
+      ], next: 3
     },
     {
       title: "Camino de Oeste Objects",
@@ -548,7 +559,7 @@ const adventure12 = {
         ["B","Install them where they seem useful.","Within an hour, every dirt road has a formal name and none has an address."],
         ["C","Let Picture Rocks rename everything.","The first proposal is Not Marana Road. It passes unanimously."],
         ["D","Call the recycling department.","A truck arrives carrying even more signs, which feels less like recycling than reproduction."]
-      ], next: 3
+      ], next: 4
     },
     {
       title: "The Municipal Sign Exchange",
@@ -559,11 +570,11 @@ const adventure12 = {
         ["B","Put every name on every sign.","The first prototype is eighteen feet tall and requires its own zoning hearing."],
         ["C","Name roads by destination.","Every road becomes This Way to Costco, including the ones going away from Costco."],
         ["D","Let navigation apps settle it.","Google and Apple choose different names and schedule a mapping duel at sunset."]
-      ], next: 4
+      ], next: 5
     },
     {
       title: "You Have Arrived Somewhere",
-      body: `<p>Two hours later, you reach the address where you started.</p><p>Your odometer says you drove thirty-seven miles. Your navigation history says you traveled on Cortaro, Cortaro Farms, Magee, Shannon, Camino de Oeste, and one road known only as <strong>Continue Straight</strong>.</p><p>You never made a wrong turn. You merely experienced every correct name at once.</p>`,
+      body: `<p>Two hours later, you reach the address where you started.</p><p>Your odometer says you drove thirty-seven miles. Your navigation history says you traveled on Cortaro, Cortaro Farms, Magee, Thornydale, River, Oracle, Shannon, Camino de Oeste, and one road known only as <strong>Continue Straight</strong>.</p><p>La Cañada never reached Canada. You never made a wrong turn. You merely experienced every correct name at once.</p>`,
       question: "How should Tucson mark the route?",
       final: true,
       choices: [
