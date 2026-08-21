@@ -21,8 +21,8 @@
       result += scene.final ? `<p class="ending-name">Ending: ${esc(choice[3])}</p><p>${esc(choice[4])}</p></div>` : `</div><button class="continue" data-commute-action="continue">Continue</button>`;
     }
     document.querySelector("#app").innerHTML = `<article class="card ${scene.final && selected !== null ? "ending" : ""}"><h2>${scene.title}</h2><div class="story">${scene.body}</div><p class="question">${scene.question}</p><div class="choices">${choices}</div>${result}${controls()}</article>`;
-    const anchor = position === "result" ? document.querySelector(".choice.selected") : position === "decision" ? document.querySelector(".question") : document.querySelector("#app");
-    anchor?.scrollIntoView({block:"start", behavior:"auto"});
+    const anchor = position === "result" ? document.querySelector(".consequence") : position === "decision" ? document.querySelector(".question") : document.querySelector("#app");
+    requestAnimationFrame(() => anchor?.scrollIntoView({block:"start", behavior:"auto"}));
   }
 
   function addHomeTile() {
