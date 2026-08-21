@@ -43,6 +43,10 @@ test("homepage renders three starters and twelve compact links", () => {
   assert.equal(document.querySelector("#app h1").textContent, "Choose your Tucson problem.");
   assert.equal(document.querySelectorAll(".featured-adventures .adventure-tile").length, 3);
   assert.equal(document.querySelectorAll(".compact-adventure").length, 12);
+  assert.deepEqual(
+    Array.from(document.querySelectorAll(".featured-adventures strong"), (item) => item.textContent),
+    ["The Pothole That Built a Subway", "The Wash Woke Up", "The Crossing That Wouldn't Open"]
+  );
   assert.equal(document.querySelectorAll('[href*="the-address-that-isnt-in-tucson"]').length, 0);
 });
 
