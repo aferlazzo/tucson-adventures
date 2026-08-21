@@ -27,20 +27,31 @@
   `;
   document.head.append(style);
 
+  function currentScene(slug) {
+    // The original adventures persist scene state in localStorage.
+    try {
+      const saved = JSON.parse(localStorage.getItem(`tucson:${slug}`));
+      if (saved && Number.isInteger(saved.scene)) return saved.scene;
+    } catch (_) {}
+
+    // Newer standalone routers keep their scene state in memory, so infer the
+    // current scene from the rendered scene heading and the registered adventure.
+    const heading = document.querySelector("#app article.card > h2")?.textContent.trim();
+    if (!heading) return 0;
+    const adventures = [window.adventure14, window.adventure15, window.adventure16].filter(Boolean);
+    const adventure = adventures.find((item) => item.slug === slug);
+    if (!adventure) return 0;
+    const index = adventure.scenes.findIndex((scene) => scene.title === heading);
+    return index >= 0 ? index : 0;
+  }
+
   function refreshContinuationTitle() {
     const match = location.pathname.match(/^\/adventures\/([^/]+)\/?/);
     const slug = match?.[1];
     const article = document.querySelector("#app article.card");
     if (!slug || !article || !titles[slug]) return;
 
-    let scene = 0;
-    try {
-      const saved = JSON.parse(localStorage.getItem(`tucson:${slug}`));
-      if (saved && Number.isInteger(saved.scene)) scene = saved.scene;
-    } catch (_) {
-      scene = 0;
-    }
-
+    const scene = currentScene(slug);
     const existing = article.querySelector(":scope > .adventure-context");
     if (scene === 0) {
       existing?.remove();
@@ -48,7 +59,6 @@
     }
 
     if (existing) return;
-
     const sceneHeading = article.querySelector(":scope > h2");
     if (!sceneHeading) return;
 
