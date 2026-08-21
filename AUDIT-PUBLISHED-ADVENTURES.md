@@ -1,1 +1,0 @@
-Temporary audit note: public menu is controlled by dist/published-adventures.js. Stories not on that whitelist remain in source control but are not published. This file can be removed after the publication audit is stable.
