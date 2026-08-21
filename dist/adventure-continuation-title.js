@@ -27,17 +27,34 @@
   `;
   document.head.append(style);
 
-  function currentScene(slug) {
-    try {
-      const saved = JSON.parse(localStorage.getItem(`tucson:${slug}`));
-      if (saved && Number.isInteger(saved.scene)) return saved.scene;
-    } catch (_) {}
+  function registeredAdventures() {
+    const list = [];
+    if (typeof adventure1 !== "undefined") list.push(adventure1);
+    if (typeof adventure2 !== "undefined") list.push(adventure2);
+    if (typeof adventure3 !== "undefined") list.push(adventure3);
+    if (typeof adventure4 !== "undefined") list.push(adventure4);
+    if (typeof adventure5 !== "undefined") list.push(adventure5);
+    if (typeof adventure6 !== "undefined") list.push(adventure6);
+    if (typeof adventure7 !== "undefined") list.push(adventure7);
+    if (typeof adventure8 !== "undefined") list.push(adventure8);
+    if (typeof adventure9 !== "undefined") list.push(adventure9);
+    if (typeof adventure10 !== "undefined") list.push(adventure10);
+    if (typeof adventure11 !== "undefined") list.push(adventure11);
+    if (typeof adventure12 !== "undefined") list.push(adventure12);
+    if (typeof adventure13 !== "undefined") list.push(adventure13);
+    if (typeof adventure14 !== "undefined") list.push(adventure14);
+    if (typeof adventure15 !== "undefined") list.push(adventure15);
+    if (typeof adventure16 !== "undefined") list.push(adventure16);
+    return list;
+  }
 
+  function currentScene(slug) {
     const heading = document.querySelector("#app article.card > h2")?.textContent.trim();
     if (!heading) return 0;
-    const adventures = [window.adventure14, window.adventure15, window.adventure16].filter(Boolean);
-    const adventure = adventures.find((item) => item.slug === slug);
+
+    const adventure = registeredAdventures().find((item) => item.slug === slug);
     if (!adventure) return 0;
+
     const index = adventure.scenes.findIndex((scene) => scene.title === heading);
     return index >= 0 ? index : 0;
   }
