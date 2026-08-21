@@ -42,8 +42,12 @@
     if (start) { event.preventDefault(); commuteState = {scene:0, selected:null, history:[]}; history.pushState({}, "", commutePath); renderCommute(); return; }
     if (!isCommute()) return;
     const choice = event.target.closest("[data-commute-choice]");
-    if (choice && commuteState.selected === null) { commuteState.selected = Number(choice.dataset.commuteChoice); renderCommute("result"); return; }
-    const action = event.target.closest("[data-commute-action]")?.dataset.commuteAction;
+    if (choice && commuteState.selected === null) { event.preventDefault(); event.stopImmediatePropagation(); commuteState.selected = Number(choice.dataset.commuteChoice); renderCommute("result"); return; }
+    const actionElement = event.target.closest("[data-commute-action]");
+    if (!actionElement) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const action = actionElement.dataset.commuteAction;
     if (action === "continue") { commuteState.history.push({...commuteState}); commuteState.scene = adventure16.scenes[commuteState.scene].next; commuteState.selected = null; renderCommute(); }
     else if (action === "back" && commuteState.selected !== null) { commuteState.selected = null; renderCommute("decision"); }
     else if (action === "back" && commuteState.history.length) { commuteState = commuteState.history.pop(); renderCommute("result"); }
