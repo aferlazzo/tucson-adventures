@@ -33,6 +33,7 @@
   <footer>Made in Tucson—with sunshine, imagination, and deferred maintenance. <a href="/about/" data-about>About</a></footer>
   <script src="/more-adventures.js?v=15" defer></script>
   <script src="/jurisdiction-humor.js?v=1" defer></script>
+  <script src="/name-reuse-bit.js?v=2" defer></script>
   <script src="/hawk-adventure.js?v=1" defer></script>
   <script src="/commute-adventure.js?v=1" defer></script>
   <script src="/app.js?v=16" defer></script>
@@ -41,10 +42,8 @@
   <script src="/remove-unrequested-address.js?v=1" defer></script>
   <script src="/adventure-continuation-title.js?v=4" defer></script>
   <script src="/driving-direction-clarity.js?v=1" defer></script>
-  <script src="/name-reuse-bit.js?v=1" defer></script>
   <script src="/analytics.js" defer></script>
   <script>
-    // Keep the interface lean without triggering a mutation loop.
     const simplifyAdventureLabels = () => {
       document.querySelectorAll('.adventure-tile strong').forEach(label => {
         const cleaned = label.textContent.replace(/^Adventure\s+\d+:\s*/i, '');
@@ -56,7 +55,6 @@
       });
     };
 
-    // Correct the mayor pronouns in the pothole adventure without replacing app.js.
     const correctMayorPronouns = () => {
       document.querySelectorAll('.consequence p').forEach(paragraph => {
         const oldText = 'He promises full transparency, then discovers every relevant file has been classified as routine utility work. Even he looks impressed.';
