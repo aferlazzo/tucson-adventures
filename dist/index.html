@@ -58,7 +58,7 @@
   <script src="/name-reuse-bit.js?v=3" defer></script>
   <script src="/hawk-adventure.js?v=2" defer></script>
   <script src="/commute-adventure.js?v=2" defer></script>
-  <script src="/app.js?v=18" defer></script>
+  <script src="/app.js?v=19" defer></script>
   <script src="/hawk-router.js?v=2" defer></script>
   <script src="/commute-router.js?v=4" defer></script>
   <script src="/remove-unrequested-address.js?v=2" defer></script>
@@ -78,8 +78,10 @@
       const homeHeading = document.querySelector('#app h1');
       const homeLede = document.querySelector('#app .lede');
       if (location.pathname === '/' && homeHeading && homeLede) {
-        homeHeading.textContent = 'Choose your Tucson problem.';
-        homeLede.textContent = 'Start with something ordinary. Make one reasonable decision. Then watch Tucson turn it into a situation. No local knowledge required.';
+        const headingText = 'Choose your Tucson problem.';
+        const ledeText = 'Start with something ordinary. Make one reasonable decision. Then watch Tucson turn it into a situation. No local knowledge required.';
+        if (homeHeading.textContent !== headingText) homeHeading.textContent = headingText;
+        if (homeLede.textContent !== ledeText) homeLede.textContent = ledeText;
       }
     };
 
