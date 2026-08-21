@@ -1,5 +1,259 @@
 "use strict";
 
+const adventure1 = {
+  slug: "the-pothole-subway",
+  title: "The Pothole That Built a Subway",
+  subtitle: "A routine street repair uncovers Tucson's most efficiently completed transit project.",
+  scenes: [
+    {
+      title: "One Very Deep Pothole",
+      body: `<p>At 9:17 Tuesday morning, a Sun Link streetcar rolls east along Congress Street.</p><p>At 9:18, it hits a pothole.</p><p>Not an ordinary Tucson pothole—the kind that rearranges your alignment and releases several new dashboard noises. This one has depth. History. Possibly its own climate.</p><p>The entire streetcar slides gently beneath Congress Street and disappears. Nobody is injured. Nobody even spills their coffee.</p><p>Underground, two steel rails stretch into a freshly exposed tunnel. The tunnel lights flicker on one by one toward somewhere the City of Tucson insists does not exist.</p><p>Your friend Elena, Tucson's acting deputy transportation director, calls. “The mayor wants the streetcar recovered. The passengers want to keep going. Someone has already renamed it the Tucson Subway on Wikipedia.”</p>`,
+      question: "What should Tucson do?",
+      choices: [
+        ["A", "Send a recovery crew underground before the pothole gets bigger.", "The crew lowers a ladder. It keeps descending until the Fire Department asks whether anyone packed lunch. The passengers grow impatient, and the operator spots lights approaching from deeper in the tunnel."],
+        ["B", "Let the operator continue and discover where the tunnel leads.", "The streetcar rolls forward twelve feet before Elena receives six calls about an unauthorized route extension. Then music echoes from the darkness and another set of headlights appears."],
+        ["C", "Close Congress Street and deny Tucson ever owned a streetcar.", "Orange barricades appear with supernatural speed. Unfortunately, forty passengers are livestreaming from underground, and one has already sold TUCSON SUBWAY T-shirts."],
+        ["D", "Declare the pothole completed and schedule a ribbon-cutting.", "Elena is silent. “That,” she finally says, “is the first option we discussed.” By 10:30, folding chairs surround the pothole beneath a banner: TUCSON UNDERGROUND—Completed ahead of schedule because nobody scheduled it."]
+      ],
+      next: 1
+    },
+    {
+      title: "The Forgotten Line",
+      body: `<p>The mayor cuts a ribbon. A reporter asks whether federal transit money paid for the project.</p><p>“No,” Elena explains. “Deferred street maintenance did.” The answer receives the morning's loudest applause.</p><p>Then a second streetcar emerges from the tunnel. It is covered in dust. Its destination sign reads:</p><div class="sign">EL CONQUISTADOR — HISTORIC LINE</div><p>The conductor, a very current and very confused transit mechanic named Luis, looks up through the pothole.</p><p>“I found this car in a sealed maintenance bay,” he says. “You need to see what's behind it.”</p>`,
+      question: "How do you respond?",
+      choices: [
+        ["A", "Climb aboard and ask Luis what he found.", "Behind the maintenance bay, Luis found a tiled station, a control room, and a wall map showing tunnels beneath half of Tucson."],
+        ["B", "Evacuate both streetcars and seal the pothole.", "Everyone agrees until three commuters refuse to leave because this is the first Tucson connection that arrived early. Luis warns that sealing the opening could block the only exit."],
+        ["C", "Ask why the historic streetcar was sealed underground.", "Luis found no explanation—only a city order stamped PROJECT SUSPENDED and a handwritten note: Tucson would lose its character if everything worked."],
+        ["D", "Add ‘Historic Line’ to the banner and hold another ribbon-cutting.", "City staff find a second ribbon. The mayor praises a historic expansion nobody knew existed. Luis interrupts to announce that the tunnel contains an entire forgotten transit system."]
+      ],
+      next: 2
+    },
+    {
+      title: "The Map Tucson Misplaced",
+      body: `<p>Luis leads everyone into the old control room. A wall map shows tunnels to the university, airport, and northwest Tucson. One line is labeled:</p><div class="sign">CORTARO EXPRESS — NO RAILROAD DELAYS</div><p>Three people in the crowd weep.</p><p>A narrow construction tunnel branches west and joins an abandoned mine shaft near the present-day Caterpillar offices. Luis explains that workers used the shaft to build the system without tearing up downtown.</p><p>Elena studies the map. “So Tucson put a mining office beside a forgotten mine?”</p><p>“Convenient parking,” Luis says.</p><p>A filing cabinet contains the original 1948 plans. The underground system was nearly finished, tested, and then removed from every public map.</p><p>The mayor asks the obvious question: “Why would Tucson bury a working transit system?”</p><p>Luis points to one remaining locked cabinet marked <strong>DO NOT OPEN WITHOUT COMMUNITY INPUT</strong>.</p>`,
+      question: "How do you investigate the abandoned system?",
+      choices: [
+        ["A", "Open the locked cabinet.", "Inside is a 900-page study recommending that the city study whether to preserve the completed system. The cover says FINAL DRAFT 7."],
+        ["B", "Follow the Cortaro Express tunnel first.", "The rails are intact, the signals still have power, and the first sign reads CORTARO—17 MINUTES. Several witnesses accuse it of showing off."],
+        ["C", "Inspect the old control panel before moving any trains.", "Most switches are clearly labeled. One large green button simply says RESUME NORMAL SERVICE."],
+        ["D", "Ask the mayor to explain the missing public records.", "She promises full transparency, then discovers every relevant file has been classified as routine utility work. Even she looks impressed."]
+      ],
+      next: 3
+    },
+    {
+      title: "Normal Service Resumes",
+      body: `<p>Someone presses RESUME NORMAL SERVICE. A rumble passes beneath Congress Street. Manhole covers bounce. Parking meters begin accepting nickels.</p><p>Destination signs illuminate belowground:</p><div class="sign">Mount Lemmon Local<br>Airport Express<br>Marana—Pending Cooperation<br>Gem Show Seasonal<br>Somewhere Affordable</div><p>A recorded voice announces, “Please stand behind the yellow cactus.”</p><p>The mayor appoints you Director of Accidental Transportation.</p>`,
+      question: "What is your first official decision?",
+      choices: [
+        ["A", "Stop service until engineers inspect the tunnels.", "The inspection form asks for the original permit number. It was filed in 1947, so the engineers estimate a response by Thursday—2049."],
+        ["B", "Open the Airport Express and test where it goes.", "The train reaches a sealed platform beneath the airport. The escalator ends inside a janitor's closet that has been confusing maintenance workers for decades."],
+        ["C", "Board the Somewhere Affordable line immediately.", "You return the reflective vest. “I resign.” “You've been director for eleven seconds,” Elena says. “A personal record.” You leap aboard with renters, retirees, and one real-estate agent chained to the emergency brake."],
+        ["D", "Open everything with Tucson's standard pothole waiver.", "The waiver is 37 pages long and asks passengers to accept risks involving heat, wildlife, temporal duplication, and “other.” Everyone signs without reading it." ]
+      ],
+      next: 4
+    },
+    {
+      title: "Old Tucson—The Other One",
+      body: `<p>The train stops beneath an artificial blue sky. Unfinished model homes surround the station, each with a garage and a suspiciously green lawn.</p><div class="sign">OLD TUCSON<br><small>Not the movie studio. The other one.</small></div><p>A sales office still displays its original sign: <strong>Homes planned from $8,900.</strong></p><p>The real-estate agent stares at the abandoned subdivision and slowly opens her laptop.</p><p>“I've been preparing for this market correction my entire career.”</p>`,
+      question: "What do you investigate first?",
+      choices: [
+        ["A", "Find out whether the old prices are legally binding.", "The fine print says prices were subject to final city approval. Elena laughs for almost a full minute."],
+        ["B", "Find out who built this neighborhood and hid it.", "Blueprints reveal Tucson Below: trains, shaded sidewalks, affordable homes, and no railroad crossings. The 1947 project was suspended after residents warned Tucson would lose its character if everything worked."],
+        ["C", "Pool everyone's money and buy the subdivision.", "The plan collapses when nobody agrees who gets the corner house. The agent quietly acquires three streets while everyone argues."],
+        ["D", "Race the agent to file the first purchase offer.", "You arrive first. Unfortunately, the sales office requires an occupancy permit the city stopped issuing in 1949."]
+      ],
+      next: 5
+    },
+    {
+      title: "The Repair Crew Arrives",
+      body: `<p>The artificial sky flickers. A warning sounds:</p><div class="quote">Surface pothole closing. Underground access will terminate in twelve minutes.</div><p>Elena calls. “Road crews finally arrived. The repair order was filed in 1983. Nobody wants to risk restarting the paperwork.”</p><p>If the opening closes, everyone may be trapped underground—with affordable model homes, but no internet.</p>`,
+      question: "What happens to Tucson Below?",
+      choices: [
+        ["A", "Evacuate everyone on the next train.", "Most board reluctantly. Three retirees refuse after calculating the property tax, and two remote workers stay because they still believe somebody will install fiber."],
+        ["B", "Declare the pothole a historic landmark.", "The preservation request succeeds instantly, but requires the pothole to remain exactly as discovered—including the streetcar wedged inside it."],
+        ["C", "Restart Tucson Below and let people remain voluntarily.", "You ask who wants affordable housing, no surface traffic, and an HOA that has not yet been formed. Forty-six people sit down immediately."],
+        ["D", "Search the blueprints for another exit.", "You find seventeen exits. Six are beneath car washes, four beneath mattress stores, and one opens inside a city meeting that has been in executive session since 1951." ]
+      ],
+      next: 6
+    },
+    {
+      title: "The Secret",
+      body: `<p>The original charter contains one rule:</p><div class="quote">Tucson Below shall remain affordable only while its location remains secret.</div><p>Aboveground, a reporter broadcasts beside a sign advertising underground homes from $8,900. Cars line Congress Street. One driver has already arrived from Phoenix with cash.</p><p>Elena calls. “You have four minutes before this becomes Arizona's hottest housing market.”</p>`,
+      question: "Make the final decision.",
+      final: true,
+      choices: [
+        ["A", "Seal the tunnel and protect Tucson Below.", "The last streetcar returns to the surface. You pull the EMERGENCY SECRECY lever, and every map changes to ROUTINE UTILITY WORK—EXPECT DELAYS. Months later, Tucson Below is peaceful—until a train marked PHOENIX BELOW arrives carrying 300 investors. Far above, another pothole opens.", "The Market Finds a Way", "You saved Tucson Below from Tucson Above. You forgot about Phoenix."],
+        ["B", "Allow residents, but ban investors and short-term rentals.", "The rules work for nearly six hours. Then the real-estate agent introduces “historic subterranean lodging experiences,” available nightly with a two-night minimum.", "The Loophole Line", "Tucson Below remains technically affordable and spiritually booked through March."],
+        ["C", "Deny everything and blame the broadcast on heatstroke.", "The city issues a statement saying the subway, forgotten tunnels, and $8,900 model homes were a shared heat mirage. Tucson accepts this immediately. Phoenix does not—and sends surveyors.", "Officially, Nothing Happened", "Congress Street reopens. Nobody can explain why the parking meters still accept nickels."],
+        ["D", "Buy every remaining house yourself.", "You become Tucson Below's largest property owner and raise rents to cover the cost of guarding its affordability. The residents replace you as mayor before lunch.", "You Became the Problem", "On the bright side, your eleven-second transportation career is no longer your shortest public appointment."]
+      ]
+    }
+  ]
+};
+
+const adventure2 = {
+  slug: "the-mural-map",
+  title: "The Murals That Hid a Treasure Map",
+  subtitle: "A painted downtown secret points toward a forgotten wash, Davis-Monthan, and something Tucson buried twice.",
+  scenes: [
+    {
+      title: "The Saguaro Points East",
+      body: `<p>You are photographing a new mural downtown when the afternoon sun hits it sideways. The painted saguaro casts a shadow that does not match the real sun.</p><p>The shadow points to a tiny symbol hidden in the mural: a turquoise airplane above three wavy lines.</p><p>Across the street, another mural contains the same airplane. Then a third. Together, their painted shadows form an arrow toward an old drainage wash rumored to run east toward Davis-Monthan Air Force Base.</p><p>A woman named Marisol, who helped paint one of the murals, watches you connect the clues.</p><p>“You're not the first person to notice,” she says. “You're just the first who didn't disappear afterward.”</p>`,
+      question: "What do you ask Marisol?",
+      choices: [
+        ["A", "Ask who designed the hidden symbols.", "Marisol names Arturo Vélez, a muralist and amateur Tucson historian who vanished from public life twelve years ago. His last known project was painted over by the city—except the symbols survived underneath."],
+        ["B", "Ask what supposedly lies at the end of the map.", "“Not gold,” she says. “Something Tucson decided was easier to lose.” She shows you a photograph of a brass city box stamped PROPERTY OF THE DESERT SKY PROJECT."],
+        ["C", "Ask who else followed the clues.", "Marisol lists a surveyor, a retired airman, and a city archivist. All returned safely—but each refused to discuss what happened in the wash."],
+        ["D", "Photograph every symbol before someone paints over them.", "Your phone arranges the pictures by location. The murals form a precise route ending at a neglected wash beneath an abandoned service road. A fourth image appears in the sequence—one you never took."]
+      ],
+      next: 1
+    },
+    {
+      title: "The Wash Nobody Maintains",
+      body: `<p>You and Marisol follow the mural route. The pavement ends at a chain-link fence with a sign:</p><div class="sign">WASH MAINTENANCE SCHEDULE<br><small>Last revised: eventually</small></div><p>Beyond it, mesquite and trash have swallowed the channel. A small encampment occupies the only dry, level ground beneath the service road.</p><p>Several people live there. They have chairs, water jugs, bicycles, and considerably better knowledge of the wash than the city map.</p><p>A resident named Leon notices the mural photographs on your phone.</p><p>“Arturo's map,” he says. “You should've brought better shoes.”</p>`,
+      question: "How do you approach the encampment?",
+      choices: [
+        ["A", "Ask Leon for permission to follow the map through their living area.", "Leon appreciates being asked. He says the map's final marker is beneath the camp—but digging there could collapse the only stable patch of ground they have."],
+        ["B", "Offer supplies in exchange for information.", "Leon accepts the water but rejects the bargain. “Information isn't a vending machine.” After a pause, he adds that he has seen men in city uniforms searching at night."],
+        ["C", "Explain the full mystery and ask everyone what they know.", "The residents compare memories. Painted stones appear after monsoons, aircraft sounds echo from a sealed culvert, and city crews inspect everything except the blocked drainage."],
+        ["D", "Stay outside the camp and search for another route.", "You find a storm grate fifty yards upstream. Someone has painted the turquoise airplane inside it, along with the words ASK LEON FIRST."]
+      ],
+      next: 2
+    },
+    {
+      title: "The Ground Is the Clue",
+      body: `<p>Leon unfolds a hand-drawn map of the wash. It includes flood paths, safe crossings, rattlesnake sightings, and one perfect circle beneath the center of camp.</p><p>“We didn't put that there,” he says. “The ground stays cool, even in June.”</p><p>Marisol overlays the mural route. Every painted shadow converges on the circle.</p><p>Then a city truck stops above the wash. Two workers unload a sign reading <strong>EMERGENCY BEAUTIFICATION PROJECT</strong> and begin measuring the camp for removal.</p><p>Leon looks at you. “Funny timing.”</p>`,
+      question: "What do you do first?",
+      choices: [
+        ["A", "Confront the workers about the suspicious project.", "They insist they are planting decorative gravel. One clipboard contains a diagram of the exact circle beneath the camp—with DAVIS-MONTHAN TRANSFER stamped across it."],
+        ["B", "Document everything before anyone is displaced.", "Marisol records the site while residents narrate what belongs to whom. Your video captures one worker whispering, “Get the box before the base liaison arrives.”"],
+        ["C", "Ask the residents whether they want to move temporarily so everyone can investigate.", "They agree only after establishing where their belongings will go and who will protect them. Leon produces a pry bar and says, “Now we're a project team.”"],
+        ["D", "Create a distraction by announcing a newly discovered historic mural.", "Within minutes, reporters, preservationists, and three competing neighborhood groups arrive. The workers cannot dig unnoticed—but neither can you."]
+      ],
+      next: 3
+    },
+    {
+      title: "The Desert Sky Box",
+      body: `<p>The circle is not soil. Beneath a thin layer of dirt lies a concrete hatch painted to resemble the wash floor.</p><p>Leon clears its edge without disturbing the camp's structures. Marisol finds four colored tiles matching four murals. When pressed in the correct order, the hatch opens.</p><p>Inside is a brass box, a reel of microfilm, and a 1962 map showing a tunnel running toward Davis-Monthan.</p><p>The box bears a warning:</p><div class="quote">DESERT SKY PROJECT<br>OPEN ONLY IF TUCSON HAS LEARNED TO MAINTAIN ITS WASHES</div><p>Everyone looks at the blocked channel.</p><p>“So,” Leon says, “never?”</p>`,
+      question: "Who should open the box?",
+      choices: [
+        ["A", "Let Leon open it because it was beneath his home.", "Inside he finds photographs, property deeds, and a letter naming the people whose neighborhoods were cleared for a secret Cold War drainage project. Several names belong to families still in Tucson."],
+        ["B", "Let Marisol open it because the muralists preserved the map.", "She finds Arturo's final sketchbook. The murals were not pointing to treasure; they were preserving evidence the official maps had erased."],
+        ["C", "Wait for an archivist and witnesses.", "A university archivist arrives with gloves, forms, and the delighted expression of someone discovering paperwork more dramatic than fiction. The city workers quietly attempt to leave."],
+        ["D", "Do not open it—scan the contents through the gap first.", "Your phone camera reveals old deeds, military correspondence, and a modern document dated next week authorizing the box's destruction."]
+      ],
+      next: 4
+    },
+    {
+      title: "What Tucson Buried",
+      body: `<p>The records reveal the Desert Sky Project: a 1960s plan to create an emergency flood-and-evacuation corridor between central Tucson and the air base.</p><p>The tunnel was completed, then sealed after officials discovered its route crossed land taken from several families without proper compensation.</p><p>Arturo found the records decades later. He hid their location across Tucson's murals so no single wall could erase the truth.</p><p>A retired Air Force engineer arrives at the wash. She confirms the tunnel still exists—and warns that tonight's monsoon could force water through it for the first time in sixty years.</p><p>The encampment sits directly above the failing entrance.</p>`,
+      question: "What is the immediate priority?",
+      choices: [
+        ["A", "Move everyone and their belongings to safe ground before the storm.", "Residents, artists, and reporters form a line. Nothing is abandoned. The evacuation finishes just as muddy water enters the upper wash."],
+        ["B", "Open the tunnel to restore the wash's drainage.", "The old gate moves six inches, groans, and releases enough cold air to scatter every document not being held down. Water begins finding the opening."],
+        ["C", "Force the city workers to call emergency services.", "Their routine beautification job abruptly becomes an official flood response. For once, the correct department arrives before the water."],
+        ["D", "Broadcast the evidence live so nobody can bury it again.", "Thousands watch as Leon explains both the history and the current danger. Public attention brings help quickly—and twelve amateur treasure hunters who are immediately handed sandbags." ]
+      ],
+      next: 5
+    },
+    {
+      title: "The Last Painted Arrow",
+      body: `<p>The monsoon hits. Water tears through the neglected wash, lifts years of debris, and pours into the reopened tunnel exactly as the 1962 engineers intended.</p><p>The encampment is empty and everyone is safe. The Desert Sky records are secured. By morning, reporters have connected the seized land to living descendants.</p><p>Then the flood exposes one final mural beneath the service road: a line of people holding a map, each pointing toward the next person.</p><p>Under it, Arturo painted:</p><div class="quote">THE TREASURE IS WHO REMEMBERS WHERE THEY TOLD YOU NOT TO LOOK.</div><p>The city offers to take possession of the box, restore the wash, and “temporarily relocate” the residents.</p>`,
+      question: "Who controls what happens next?",
+      final: true,
+      choices: [
+        ["A", "Create a resident-led trust for the records and restoration money.", "The families named in the deeds join the wash residents and muralists on the governing board. The wash is repaired, the history remains public, and Leon becomes the only Tucson infrastructure chairman who actually lives beside the infrastructure.", "The People Hold the Map", "The treasure was not gold. It was proof—and control over what the proof changed."],
+        ["B", "Turn everything over to the city with full public oversight.", "The records enter the archive under cameras and court orders. Maintenance begins after only nine meetings, which Tucson historians classify as miraculous speed.", "Officially Unearthed", "The city finally preserves something before accidentally paving over it."],
+        ["C", "Build a protected mural trail telling the entire story.", "Artists paint the route from downtown to the wash. Every mural includes a contribution from a displaced family or encampment resident. Tourists follow the trail expecting treasure and leave knowing whose ground they walked on.", "The Map Becomes the Monument", "Nothing is hidden anymore—except one tiny turquoise airplane Marisol refuses to explain."],
+        ["D", "Return the box underground but publish copies everywhere.", "The original box goes back beneath a new flood-safe marker. Copies appear in libraries, schools, archives, and every muralist's studio. The city can rebury the box, but not the story.", "Buried, Not Forgotten", "During the next monsoon, a painted arrow appears beneath a different Tucson bridge."]
+      ]
+    }
+  ]
+};
+
+const adventure3 = {
+  slug: "the-doctor-is-a-data-center",
+  title: "The Doctor Is a Data Center",
+  subtitle: "A newcomer searches for a primary-care doctor and discovers the county's best-kept server farm.",
+  scenes: [
+    {
+      title: "Accepting New Patients",
+      body: `<p>Three weeks after moving to Pima County, your new neighbor Priya needs a primary-care provider.</p><p>Her insurance directory lists 184 doctors accepting new patients.</p><p>The first 61 phone numbers are disconnected. Twenty-eight offices accept new patients who are already patients. One doctor retired during the Obama administration. Another is apparently a veterinarian.</p><p>At 11:43 P.M., Priya finds one listing with appointments available tomorrow:</p><div class="sign">DESERT CLOUD FAMILY MEDICINE<br>Accepting all patients · Open 24/7<br>Directions: Continue past pavement</div><p>“I'm either getting a physical,” she tells you, “or joining a cult. Want to drive?”</p>`,
+      question: "How do you investigate the miraculous opening?",
+      choices: [
+        ["A", "Call the office before driving anywhere.", "A cheerful voice says, “Your health is important to us,” then places you on hold. After forty minutes, you realize the hold music is generated from your own elevated blood pressure."],
+        ["B", "Check the address on a map.", "The pin sits on an unnamed road beyond a gravel pit. Street View shows desert, a locked gate, and a saguaro blurred for privacy."],
+        ["C", "Book the first available appointment immediately.", "The portal confirms Priya for 8:00 A.M. with DR. PCP-PRIMARY-NULL. It asks her to arrive fifteen minutes early and bring every medical record since birth."],
+        ["D", "Search public records for Desert Cloud Family Medicine.", "You find no medical license. You do find a building permit for a “small records-storage annex” requiring enough electrical capacity to make the application portal briefly sweat."]
+      ],
+      next: 1
+    },
+    {
+      title: "Continue Past Pavement",
+      body: `<p>The next morning, you follow the directions. Pavement ends. Cell service ends. Priya's patience ended Tuesday.</p><p>Beyond a decorative wall disguised as desert landscaping stands an enormous windowless building. Cooling towers hum behind painted silhouettes of saguaros.</p><p>The sign at the gate reads:</p><div class="sign">DESERT CLOUD FAMILY MEDICINE<br><small>Please have insurance card and security clearance ready</small></div><p>A guard scans Priya's appointment confirmation.</p><p>“You're the first actual patient,” he says.</p>`,
+      question: "What do you ask the guard?",
+      choices: [
+        ["A", "Ask where the doctor is.", "He checks a tablet. “Rack C, aisle twelve.” Priya explains that a rack is not a physician. The guard says nobody covered that distinction in orientation."],
+        ["B", "Ask what the building really is.", "He lowers his voice. “Regional data center. Officially it stores medical records. Unofficially it stores every appointment request nobody could schedule.”"],
+        ["C", "Ask who approved construction.", "The permit displays signatures from the city, county, three development authorities, and a committee called Residents for Projects Residents Have Not Heard About."],
+        ["D", "Insist that Priya has a confirmed appointment.", "The guard honors it. Inside, a kiosk measures her temperature, prints a healthy-looking receipt, and schedules follow-up care for the first Tuesday after someone answers the phone." ]
+      ],
+      next: 2
+    },
+    {
+      title: "The Server Room Examination",
+      body: `<p>The guard escorts you into a refrigerated hall containing thousands of blinking servers.</p><p>Every machine is labeled with a healthcare function:</p><div class="sign">FIND A PROVIDER<br>VERIFY COVERAGE<br>REQUEST APPOINTMENT<br>REQUEST REQUEST STATUS<br>APOLOGIZE FOR INCONVENIENCE</div><p>A technician named Mateo explains that the center uses advanced artificial intelligence to maintain Pima County's provider directory.</p><p>“Does it find doctors?” Priya asks.</p><p>“No,” Mateo says. “But it can rearrange the same unavailable doctors in under two seconds.”</p><p>Then alarms sound. The system has detected an unauthorized living patient.</p>`,
+      question: "What should Priya do?",
+      choices: [
+        ["A", "Ask the AI to locate one real appointment.", "Every server spins up. Lights across the valley dim. After seven minutes, the system recommends an urgent-care clinic 83 miles away that closed last Thursday."],
+        ["B", "Download evidence of the false provider listings.", "Mateo helps export the records. The file is so large that the progress bar applies for Medicare before reaching 20 percent."],
+        ["C", "Trigger the building's patient-assistance protocol.", "A robot delivers a clipboard containing seventeen forms and a pen chained to nothing. The emergency protocol has now exhausted its resources."],
+        ["D", "Ask why politicians concealed the data center.", "Mateo shows you the project name: OPERATION HEALTHY GROWTH. Officials feared residents might object to its power use, water use, and complete absence of healthcare." ]
+      ],
+      next: 3
+    },
+    {
+      title: "Community Input Arrives",
+      body: `<p>Priya sends one photograph to a neighborhood group.</p><p>Within twelve minutes, the gate is surrounded by residents, reporters, environmental groups, retired nurses, and six people who have been waiting for dermatology referrals since spring.</p><p>Local officials arrive together and independently announce that they have only just learned about the project they approved.</p><p>One supervisor steps to the microphones.</p><p>“This facility was never hidden,” she says. “It was described in Appendix Q of a 900-page agenda posted online for eleven minutes.”</p><p>The crowd expresses its appreciation using several traditional Tucson hand gestures.</p>`,
+      question: "How should the discovery be made public?",
+      choices: [
+        ["A", "Let Priya explain how a PCP search led here.", "Her story is devastating because everybody has their own version. The press conference becomes a support group with microphones."],
+        ["B", "Make officials read the provider directory aloud.", "The first supervisor reaches three disconnected numbers before requesting a recess. The crowd denies prior authorization."],
+        ["C", "Give Mateo the technical records.", "He demonstrates that the center spends more computing power explaining why appointments are unavailable than scheduling them."],
+        ["D", "Open the gates and let residents tour the facility.", "The server hall fills with people searching the racks for their missing referrals. Someone locates a colonoscopy request from 2024 blinking quietly behind a firewall." ]
+      ],
+      next: 4
+    },
+    {
+      title: "The Emergency Public Meeting",
+      body: `<p>Officials schedule an emergency public meeting for 2:00 P.M. on a weekday in a room with eleven chairs.</p><p>The meeting is moved outside after 600 residents arrive.</p><p>The county presents four facts:</p><div class="quote">The data center is already built.<br>Its contracts run for twenty years.<br>Its cooling system consumes substantial local resources.<br>It has successfully scheduled zero medical appointments.</div><p>Priya raises her hand.</p><p>“Before we discuss the building,” she says, “does anyone here know a primary-care doctor accepting new patients?”</p><p>Every official studies the ground.</p>`,
+      question: "What should happen to the facility now?",
+      choices: [
+        ["A", "Require it to verify every provider listing with a real phone call.", "The AI places thousands of calls. Half reach voicemail. A quarter reach fax machines. One is answered by the veterinarian, who remains surprisingly open to new patients."],
+        ["B", "Convert part of the building into an actual community clinic.", "Engineers discover the server lobby is large enough for exam rooms, but the original plans allocated it entirely to a sculpture titled ACCESS."],
+        ["C", "Shut the data center down immediately.", "Officials warn that every broken provider directory would go offline. Residents ask how they would notice."],
+        ["D", "Keep it operating but publish its contracts and resource use.", "The records reveal consulting fees for Community Listening, Public Confidence, and Choosing a Calming Shade of Beige for the security wall." ]
+      ],
+      next: 5
+    },
+    {
+      title: "Priya's Follow-Up Appointment",
+      body: `<p>Public pressure produces the fastest government action anyone in attendance can remember.</p><p>The hidden sign comes down. The contracts go online. A temporary clinic opens inside the former security office while community leaders negotiate the facility's future.</p><p>Mateo reprograms one server to call medical offices and remove listings that are not genuinely accepting patients.</p><p>The directory shrinks from 184 doctors to three.</p><p>“That looks terrible,” an official says.</p><p>“It is terrible,” Priya replies. “Now it's also accurate.”</p><p>One of the three offices calls her back. The first appointment is in eleven weeks.</p><p>Everyone celebrates, which tells you more about the healthcare situation than the data center ever could.</p>`,
+      question: "What lasting solution does the community choose?",
+      final: true,
+      choices: [
+        ["A", "Turn the data center into a clinic-and-scheduling hub.", "Half the servers continue managing records. The rest of the building gains exam rooms, telehealth booths, and humans authorized to answer telephones.", "The Cloud Gets a Waiting Room", "Priya finally sees a doctor in the same building that once pretended to be one."],
+        ["B", "Create a legally verified public provider directory.", "Medical offices must confirm availability regularly or disappear from the list. The directory becomes much smaller and dramatically more useful.", "Three Honest Doctors", "Pima County loses 181 imaginary options and gains something rarer: accurate information."],
+        ["C", "Use the facility to recruit and support local clinicians.", "Cooling subsidies become training grants, clinic space, and support for practices taking new patients. Officials unveil the plan without using the word synergy.", "Processing People, Not Requests", "The first new physician arrives before the old system finishes generating its apology."],
+        ["D", "Preserve one server exactly as officials designed it.", "It remains in the lobby, endlessly searching for an available PCP and displaying PLEASE HOLD. Schoolchildren visit to learn about early twenty-first-century bureaucracy.", "The Monument to Access", "Once a year, the server recommends the veterinarian." ]
+      ]
+    }
+  ]
+};
+
+
+
 const adventure4 = {
   slug: "the-wash-woke-up",
   title: "The Wash Woke Up",
@@ -541,7 +795,7 @@ const adventure12 = {
     },
     {
       title: "Grant Requests a New Identity",
-      body: `<p>The app sends you south on Oracle, then west on <strong>Grant Road</strong>.</p><p>Grant behaves like an ordinary road until Silverbell. There, without a turn or farewell, it becomes <strong>Ironwood Hills Drive</strong>.</p><p>The pavement has not changed. The scenery has barely changed. Only the road's confidence has improved.</p><div class="sign">GRANT ROAD HAS LEFT THE CITY<br><small>Please address it by its new professional name.</small></div>`,
+      body: `<p>The app sends you along Oracle, then tells you to turn right onto <strong>Grant Road</strong>.</p><p>Grant behaves like an ordinary road until Silverbell. There, without a turn or farewell, it becomes <strong>Ironwood Hills Drive</strong>.</p><p>The pavement has not changed. The scenery has barely changed. Only the road's confidence has improved.</p><div class="sign">GRANT ROAD HAS LEFT THE CITY<br><small>Please address it by its new professional name.</small></div>`,
       question: "How do you respond to the rebranding?",
       choices: [
         ["A","Keep calling it Grant.","Your navigation app corrects you in the tone of a disappointed teacher."],
@@ -732,6 +986,223 @@ const adventure14 = {
         ["B","“We have formed a committee.”","The computer requests evidence of progress. Humanity submits a logo and three postponed agendas.","The Blue-Ribbon Biosphere","Earth remains operational pending a report nobody has authority to release."],
         ["C","“Can we move into Biosphere 2?”","The ants reject the application because humanity lacks references and has a history of damaging rentals.","No Vacancy","The backup planet has reviewed the original tenant."],
         ["D","“We will fix Biosphere 1.”","The computer unlocks the exit and schedules a follow-up inspection. Nobody asks whether 730 days might have been easier.","Return to Earth","You leave with oxygen, a mission patch, and the uncomfortable feeling that the experiment followed you outside."]
+      ]
+    }
+  ]
+};
+
+
+// Keep the premise, but make the joke concrete enough to land without knowing
+// anything about local government: three agencies arguing over one stop sign.
+adventure9.subtitle = "One stop sign falls down. Three governments show up. Nobody wants to be the one who owns it.";
+adventure9.scenes = [
+  {
+    title: "The Stop Sign Nobody Owns",
+    body: `<p>A windstorm knocks down the stop sign at the entrance to your neighborhood.</p><p>The pole lands in Marana. The red sign lands in Pima County. One corner is still touching Tucson.</p><p>You take a picture and report it.</p><p>Marana says, “Not ours.”</p><p>Pima County says, “Mostly not ours.”</p><p>Tucson says, “We own that tiny corner.”</p><p>The stop sign is lying in the dirt, wondering whether it should hire a lawyer.</p>`,
+    question: "Who do you try first?",
+    choices: [
+      ["A","Call Marana.","They agree the pole is in Marana. Unfortunately, the important red part is not."],
+      ["B","Call Pima County.","They agree the red part is in the county. They ask whether you can move the pole six feet first."],
+      ["C","Call Tucson.","Tucson agrees to take responsibility for the corner. Nobody knows what to do with one corner of a stop sign."],
+      ["D","Report the dangerous intersection.","Someone quickly puts out cones. The cones are the first objects all day that everybody agrees belong there."]
+    ], next: 1
+  },
+  {
+    title: "Three Trucks, One Sign",
+    body: `<p>A Marana truck arrives.</p><p>Then a Pima County truck.</p><p>Then a Tucson truck.</p><p>Six workers stand around the fallen sign looking at three different maps.</p><p>Every map has a bright line showing where somebody else's problem begins.</p><p>Meanwhile, drivers are taking turns by waving politely, waving angrily, or just closing their eyes and hoping.</p>`,
+    question: "How do you get someone to fix it?",
+    choices: [
+      ["A","Ask all three crews at once.","All three point in different directions. For one beautiful second, they look like a synchronized dance team."],
+      ["B","Ask the closest crew to just put it back up.","They like the idea until somebody asks who would pay for the bolts."],
+      ["C","Call a TV reporter.","The camera comes out. Suddenly every truck contains a supervisor."],
+      ["D","Pick up the sign yourself.","Three people shout, “WAIT!” Apparently this is the first thing everyone agrees on."]
+    ], next: 2
+  },
+  {
+    title: "The Meeting About the Sign",
+    body: `<p>Instead of fixing the sign, everyone holds a meeting beside it.</p><p>A folding table appears.</p><p>Half the table is in Marana. One leg is in Tucson. The coffee is in Pima County.</p><p>The stop sign is still flat on the ground.</p><p>A kid riding by on a bicycle asks, “Why don't you just stand it up?”</p><p>Nobody answers.</p>`,
+    question: "What should happen next?",
+    choices: [
+      ["A","Let one crew fix it now and sort out the bill later.","Everyone stares at you as if you just suggested fixing a problem."],
+      ["B","Move the whole sign into one city.","Excellent idea. Now everyone argues about which city gets it."],
+      ["C","Use a temporary stop sign.","Someone produces one from a truck. The crowd reacts as if a magician pulled out a rabbit."],
+      ["D","Put up three stop signs.","Drivers would have to stop three times. Government efficiency has officially gone too far."]
+    ], next: 3
+  },
+  {
+    title: "The Wind Solves It",
+    body: `<p>Another gust of wind blows the fallen sign downhill.</p><p>It slides twelve feet.</p><p>Now the entire sign is in Pima County.</p><p>Everyone becomes very quiet.</p><p>The county worker looks at the sign.</p><p>Then at the other two crews.</p><p>Then back at the sign.</p><p>“Fine,” she says.</p><p>Everyone applauds the wind.</p>`,
+    question: "What would prevent this next time?",
+    choices: [
+      ["A","One phone number for road emergencies.","A revolutionary idea: the caller does not need to know which map owns the pothole, sign, or squirrel."],
+      ["B","A simple map regular people can understand.","The new map has roads, names, and almost no mysterious colored blobs. People become suspicious."],
+      ["C","Let the nearest crew fix safety problems.","The crews celebrate. They have secretly wanted permission to use their tools."],
+      ["D","Make stop signs heavier.","This would solve the wind problem while leaving the government problem completely untouched."]
+    ], next: 4
+  },
+  {
+    title: "Stop Means Stop",
+    body: `<p>Before sunset, the new stop sign is standing.</p><p>It has four agency stickers on the back and one simple word on the front:</p><div class="sign">STOP</div><p>After an entire day of government discussion, the sign turns out to have the clearest instructions of anyone involved.</p>`,
+    question: "How does the story end?",
+    final: true,
+    choices: [
+      ["A","Let crews fix safety problems first.","The next fallen sign is repaired before anyone unfolds a table.","Fix It First","For one glorious afternoon, the toolbox beats the rulebook."],
+      ["B","Publish the simple map.","Residents finally learn who to call without needing a geography degree.","Now You Know","The map fits on one page. Civilization survives."],
+      ["C","Save the folding table in a museum.","The label reads: TABLE USED TO DISCUSS ONE FALLEN STOP SIGN.","Historic Furniture","Visitors assume the exhibit is satire. It is not."],
+      ["D","Thank the wind.","A small plaque appears: THIS PROBLEM WAS SOLVED BY WEATHER.","Employee of the Month","The wind is unavailable for comment."]
+    ]
+  }
+];
+
+
+(() => {
+  if (typeof adventure12 === "undefined") return;
+
+  const scene = adventure12.scenes.find((item) => item.title === "Grant Requests a New Identity");
+  if (!scene || scene.body.includes("Linda Vista Boulevard")) return;
+
+  const marker = `<p>The pavement has not changed. The scenery has barely changed. Only the road's confidence has improved.</p>`;
+  const bit = `<p>Then Tucson introduces a different problem: apparently some road names were purchased in bulk.</p><p>You see <strong>Linda Vista Boulevard</strong>. Then <strong>Linda Vista Road</strong>. Then <strong>Linda Vista Park</strong>, which is not even on either one.</p><p>So Linda Vista is not one place. It is a name Tucson keeps handing out.</p><p>Then <strong>Country Club</strong> starts multiplying too: <strong>Country Club Road</strong>, <strong>Country Club Vista Drive</strong>, <strong>Country Club Vista Circle</strong>, Country Club Park, and Country Club Manor.</p><div class="quote">Tucson did not run out of road names.<br>It started reusing them.</div><p>“Meet me near Country Club” is not a location. It is a guessing game.</p>`;
+
+  scene.body = scene.body.replace(marker, `${bit}${marker}`);
+})();
+
+
+const adventure15 = {
+  slug: "the-crossing-guard-in-the-sky",
+  title: "The Crossing Guard in the Sky",
+  subtitle: "Tucson turns a crossing guard into three lights and assumes the rest is obvious.",
+  scenes: [
+    {
+      title: "The Traffic Light That Is Off",
+      body: `<p>You approach a pedestrian crossing and see three lights hanging over the road.</p><p>They are completely dark.</p><p>You briefly wonder whether the signal is broken. Then a pedestrian presses a button.</p><p>The machine wakes up.</p><div class="sign">YELLOW</div><p>Good. You know yellow. You have trained for yellow.</p>`,
+      question: "What do you do?",
+      choices: [
+        ["A","Slow down and prepare to stop.","Excellent. The signal has begun speaking a language you recognize."],
+        ["B","Keep watching because something is clearly about to happen.","A solid red appears. Your confidence returns. Red is one of your strongest subjects."],
+        ["C","Assume the dark signal was broken.","It immediately proves otherwise with enough colored lights to make the diagnosis awkward."],
+        ["D","Look for a crossing guard.","There isn't one. Tucson has apparently moved the position into the electrical department."]
+      ], next: 1
+    },
+    {
+      title: "Still Within Your Training",
+      body: `<p>The signal turns solid red.</p><p>You stop. The pedestrian begins crossing.</p><p>Everything makes sense again.</p><p>Then the two red lights begin flashing alternately.</p><div class="sign">RED &nbsp; RED<br><small>Now taking turns</small></div><p>Tucson has changed the rules in the middle of the exam.</p>`,
+      question: "What does flashing red mean here?",
+      choices: [
+        ["A","Remain stopped until you are sure what comes next.","Reasonable. The driver beside you does exactly the same thing, possibly because you did."],
+        ["B","Treat it like a stop sign and proceed only when the crossing is clear.","That is the idea. Unfortunately, the machine has no arms with which to wave you through reassuringly."],
+        ["C","Wait for green.","There is no green. You have discovered the signal's first personality trait."],
+        ["D","Look at the other drivers for guidance.","They look back. Tucson has accidentally created a four-car committee."]
+      ], next: 2
+    },
+    {
+      title: "The Crossing Guard Has Been Automated",
+      body: `<p>Then you understand what Tucson has done.</p><p><strong>They turned a school crossing guard into a traffic signal.</strong></p><p>The dark signal means the crossing guard is off duty. Yellow means the guard has noticed the pedestrian. Solid red means everybody stops. Flashing red means stop, then proceed when the crossing is clear.</p><p>Unfortunately, they removed the crossing guard's most useful feature: an actual person standing there making it obvious what you should do.</p>`,
+      question: "What would make this easier for a first-time driver?",
+      choices: [
+        ["A","A small sign explaining FLASHING RED = STOP, THEN GO WHEN CLEAR.","Six words accomplish what your facial expression has been attempting for thirty seconds."],
+        ["B","An electronic hand that waves cars through.","Transportation officials reject it as ridiculous, which seems like a surprisingly late objection."],
+        ["C","A recorded crossing guard voice.","The speaker says, “You're good, go ahead,” and three drivers nearly applaud."],
+        ["D","Nothing. Everyone will eventually learn it.","True. Tucson has historically relied heavily on eventually."]
+      ], next: 3
+    },
+    {
+      title: "The Four-Car Committee",
+      body: `<p>The pedestrian reaches the sidewalk. The crossing is clear.</p><p>You stop at the flashing red and prepare to proceed.</p><p>The driver beside you remains stopped.</p><p>You wonder whether she knows something you don't.</p><p>She wonders exactly the same thing about you.</p><p>The driver behind both of you has now become an unpaid consultant.</p>`,
+      question: "Who breaks the deadlock?",
+      choices: [
+        ["A","You stop, verify the crossing is clear, then proceed.","The other cars immediately follow. You have been elected temporary HAWK interpreter."],
+        ["B","Wait for someone else.","Everyone agrees with this strategy independently. Nothing happens with impressive coordination."],
+        ["C","Point at the empty crosswalk.","The gesture communicates more information than the entire overhead installation."],
+        ["D","Roll down the window and ask whether anybody understands this thing.","Three windows open. A brief seminar begins at the intersection."]
+      ], next: 4
+    },
+    {
+      title: "Graduation",
+      body: `<p>You proceed safely through the crossing.</p><p>Two blocks later you encounter an ordinary traffic light: red, yellow, green.</p><p>You have never been so happy to see government equipment you understand.</p><p>Behind you, another driver approaches the HAWK for the first time. The signal is dark.</p><p>You know exactly what that driver is thinking.</p>`,
+      question: "How does Tucson improve the experience?",
+      final: true,
+      choices: [
+        ["A","Add plain-language instructions at HAWK crossings.","New drivers understand the flashing red without needing an intersection apprenticeship.","The Six-Word Manual","STOP, THEN GO WHEN CLEAR becomes Tucson's shortest transportation study."],
+        ["B","Bring back a human crossing guard to explain the automated crossing guard.","The guard spends the morning pointing at the lights and the afternoon wondering why automation required another employee.","Full Circle","Tucson successfully automates a job by adding the job back."],
+        ["C","Require every Tucson driver to encounter one during the license test.","The examiner activates the HAWK. Half the applicants ask whether the signal is broken before it even turns on.","Local Knowledge","Nobody is embarrassed. Everybody learns."],
+        ["D","Leave it exactly as it is.","Eventually every local learns the sequence and begins giving visiting relatives a small lecture before leaving the airport.","Welcome to Tucson","Your first attraction is a traffic signal with an orientation program."]
+      ]
+    }
+  ]
+};
+
+
+const adventure16 = {
+  slug: "your-emergency-is-apparently-my-commute",
+  title: "Your Emergency Is Apparently My Commute",
+  subtitle: "One ordinary Tucson errand. Everybody else gets a vote in how it goes.",
+  scenes: [
+    {
+      title: "Apparently You're in the Way",
+      body: `<p>You need one thing from the store.</p><p>One.</p><p>This should take twenty minutes.</p><p>You pull onto Oracle Road and settle into traffic. Almost immediately, a pickup appears in your rearview mirror.</p><p>Actually, you don't so much <em>notice</em> it as discover that you've apparently acquired a trailer.</p><p>The driver is close enough to inspect your rear upholstery. You're already keeping up with traffic.</p><p>He disagrees.</p>`,
+      question: "What do you do?",
+      choices: [
+        ["A","Keep doing exactly what you're doing.","You maintain your speed. The pickup driver interprets this as an act of aggression, rockets around you, and disappears ahead. Thirty seconds later, you pull up beside him at a red light. He has converted several gallons of adrenaline into seventeen feet."],
+        ["B","Move over and let him go.","The pickup launches past you like a donor organ is being transported in the truck bed. At the next red light, you pull up behind him. He has risked four people's lives and successfully moved from behind you to directly in front of you."],
+        ["C","Speed up a little.","You increase your speed. So does he. Ah. This wasn't about your speed. This was about his rightful ownership of the pavement currently occupied by your car. You move over. At the next light, you're beside him anyway."],
+        ["D","Take the next turn and get away from him.","You escape the pickup and add four minutes to the trip. Your navigation app congratulates you by routing you back onto Oracle directly behind the same pickup."]
+      ], next: 1
+    },
+    {
+      title: "Courtesy, Donated on Your Behalf",
+      body: `<p>Traffic starts moving normally again.</p><p>Then the SUV ahead suddenly brakes.</p><p>You brake.</p><p>No pedestrian. No animal. No emergency.</p><p>The driver is waving someone out of a shopping-center driveway.</p><p>The waiting driver hesitates. The SUV driver waves harder. The waiting driver waves back.</p><p>Nobody moves.</p><p>You are witnessing a negotiation between two extremely courteous people who have forgotten that twenty-seven other people are involved.</p>`,
+      question: "What do you do?",
+      choices: [
+        ["A","Wait patiently.","You wait. Someone behind you honks—not at the SUV, at you. Apparently you are now management."],
+        ["B","Give one short honk.","The SUV driver looks in the mirror with the expression of someone who has just discovered that kindness has critics. You immediately regret participating in society."],
+        ["C","Change lanes and escape.","Excellent decision for approximately six seconds. A sedan ahead crosses two lanes after discovering that the turn it takes every week is, astonishingly, still located here."],
+        ["D","Leave extra room and let the ceremony finish.","The waiting car finally pulls out, then stops halfway across both lanes to decide which lane it wanted. Courtesy has successfully reproduced."]
+      ], next: 2
+    },
+    {
+      title: "Yellow Means Something Different to Everyone",
+      body: `<p>A few blocks later, the next light turns yellow.</p><p>You're far enough away that stopping is easy.</p><p>The car beside you reaches a different conclusion.</p><p>It accelerates.</p><p>The light turns red while the car is still in the intersection. Cross traffic gets green. Nobody can move because our hero is now sitting sideways in everybody else's afternoon.</p>`,
+      question: "When your light finally turns green, what do you do?",
+      choices: [
+        ["A","Go as soon as there's room.","You start forward. Someone from the cross street makes one final attempt to squeeze through. You stop again. Your green light is apparently advisory."],
+        ["B","Wait an extra second.","Good call. A car sails through the red light. Had you moved immediately, the two of you would have become considerably better acquainted."],
+        ["C","Let somebody else test the intersection first.","The car next to you starts forward. Nothing hits it. Promising. You follow, having pioneered the use of another Tucson driver as a laboratory mouse."],
+        ["D","Turn right and avoid the intersection.","You turn right. Navigation adds another three minutes and immediately directs you toward an intersection occupied by someone making a left turn from the right lane."]
+      ], next: 3
+    },
+    {
+      title: "The Lane Is a Suggestion",
+      body: `<p>You can finally see the store ahead.</p><p>A sedan in the far-left lane suddenly realizes the entrance is on the right.</p><p>Its turn signal appears at the exact moment the car begins crossing three lanes.</p><p>The signal is less a request than a press release.</p><p>Everyone brakes. The sedan reaches the driveway and continues as though the maneuver had been approved in advance.</p>`,
+      question: "How do you respond?",
+      choices: [
+        ["A","Brake and give the driver room.","You lose six seconds and retain the front half of your car. This is considered a strong outcome."],
+        ["B","Hold your lane.","The sedan keeps coming until both drivers discover the ancient Tucson negotiating tool known as eye contact."],
+        ["C","Move away from the sedan.","You change lanes safely and immediately inherit a new problem: a driver entering from the parking lot who believes merging means choosing a victim."],
+        ["D","Miss the entrance and circle back.","You continue to the next driveway. The sedan that cut across traffic is now stopped at the first parking-lot speed bump. You have somehow passed it without trying."]
+      ], next: 4
+    },
+    {
+      title: "The Great Parking Space Expedition",
+      body: `<p>At last, you enter the parking lot.</p><p>The twenty-minute errand is already losing its argument with the clock.</p><p>Then you see him.</p><p>The pickup driver from Oracle.</p><p>Speed Racer is circling the lot at walking speed.</p><p>He passes an empty space.</p><p>Too far from the entrance.</p><p>Another empty space.</p><p>Unacceptable.</p><p>The man who treated Oracle Road like qualifying at Talladega is now unwilling to walk an additional forty yards.</p>`,
+      question: "Where do you park?",
+      choices: [
+        ["A","Take the first ordinary space.","You park, get out, and start walking. The pickup passes you again, still hunting. For the first time all afternoon, his urgency has vanished."],
+        ["B","Look for a closer space too.","You join the hunt. For thirty seconds, you and the pickup orbit the same row like two moons competing for handicapped-adjacent real estate. You abandon the mission first."],
+        ["C","Park at the far edge of the lot.","You park immediately. The walk takes forty-five seconds. The pickup is still circling when you reach the entrance."],
+        ["D","Wait to see what Speed Racer does.","He stops for a departing shopper who is loading twelve bags, returning a cart, checking a receipt, and apparently refinancing the vehicle before leaving." ]
+      ], next: 5
+    },
+    {
+      title: "Eleven Seconds",
+      body: `<p>You walk toward the store.</p><p>Behind you, the pickup finally finds a space.</p><p>You reach the entrance.</p><p>A few seconds later, Speed Racer walks in behind you.</p><p>After tailgating, weaving, accelerating, changing lanes, and treating several traffic laws as interesting suggestions, he has arrived approximately eleven seconds after you.</p><p>You only wanted one thing from the store.</p><p>But all the way here, strangers made decisions for themselves—and handed you the consequences.</p><div class="quote">Everybody drives their own car.<br>Unfortunately, they're also driving yours.</div>`,
+      question: "What have you learned from the trip?",
+      final: true,
+      choices: [
+        ["A","Getting ahead isn't the same as getting there sooner.","Speed Racer reaches the automatic doors just as you do.","The Eleven-Second Victory","He won Oracle Road. You both arrived at the produce section at the same time."],
+        ["B","Other people's tiny decisions become your problem.","The trip required you to react to choices you never made and risks you never volunteered for.","Involuntary Driver's Ed","Nobody asked you to join the experiment. Tucson enrolled you automatically."],
+        ["C","Leave more room for other people's bad ideas.","You decide that extra space is not surrender. It is simply somewhere for somebody else's nonsense to happen without involving your bumper.","The Nonsense Buffer","Defensive driving turns out to be mostly defensive predicting."],
+        ["D","Buy the one thing and go home.","You enter the store and discover you forgot the shopping list. Fortunately, you only needed one thing. Unfortunately, you can no longer remember what it was.","The Actual Emergency","After surviving Tucson traffic, you are defeated by the reason you left home." ]
       ]
     }
   ]

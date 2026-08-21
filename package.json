@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "check": "node --check dist/app.js",
+    "check": "node --check dist/stories.js && node --check dist/app.js && node --test tests/smoke.test.js",
+    "test": "node --test tests/smoke.test.js",
     "deploy": "wrangler deploy"
   },
   "devDependencies": {
+    "linkedom": "^0.18.13",
     "wrangler": "^4.0.0"
   }
 }
