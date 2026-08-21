@@ -73,16 +73,22 @@
     if (!context) {
       context = document.createElement("div");
       context.className = "adventure-context";
-      context.innerHTML = `<p class="adventure-context-title"></p><span class="adventure-context-continued">continued</span>`;
+      context.innerHTML = `<p class="adventure-context-title"></p>`;
       sceneHeading.before(context);
     }
 
     const titleNode = context.querySelector(".adventure-context-title");
     if (titleNode.textContent !== titles[slug]) titleNode.textContent = titles[slug];
 
-    const continued = context.querySelector(".adventure-context-continued");
-    const shouldHide = scene === 0;
-    if (continued.hidden !== shouldHide) continued.hidden = shouldHide;
+    let continued = context.querySelector(".adventure-context-continued");
+    if (scene === 0) {
+      continued?.remove();
+    } else if (!continued) {
+      continued = document.createElement("span");
+      continued.className = "adventure-context-continued";
+      continued.textContent = "continued";
+      context.append(continued);
+    }
   }
 
   refreshAdventureTitle();
