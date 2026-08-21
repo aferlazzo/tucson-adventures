@@ -60,9 +60,12 @@
       sceneHeading.before(context);
     }
 
-    context.querySelector(".adventure-context-title").textContent = titles[slug];
+    const titleNode = context.querySelector(".adventure-context-title");
+    if (titleNode.textContent !== titles[slug]) titleNode.textContent = titles[slug];
+
     const continued = context.querySelector(".adventure-context-continued");
-    continued.hidden = scene === 0;
+    const shouldHide = scene === 0;
+    if (continued.hidden !== shouldHide) continued.hidden = shouldHide;
   }
 
   refreshAdventureTitle();
