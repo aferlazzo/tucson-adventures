@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#123f57">
-  <meta name="description" content="Interactive stories about the strange decisions Tucson makes for you.">
+  <meta name="description" content="Interactive Tucson comedy: ordinary errands, local absurdity, and decisions that make everything worse.">
   <title>Tucson Adventures</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXM5FKL3KQ"></script>
@@ -22,7 +22,7 @@
     <div class="header-inner">
       <div>
         <a class="brand" href="/" data-home>Tucson Adventures</a>
-        <span class="tagline">The strange decisions Tucson makes for you.</span>
+        <span class="tagline">You had one simple plan. Then Tucson happened.</span>
       </div>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="/about/" data-about>About</a>
@@ -36,7 +36,7 @@
   <script src="/name-reuse-bit.js?v=2" defer></script>
   <script src="/hawk-adventure.js?v=1" defer></script>
   <script src="/commute-adventure.js?v=1" defer></script>
-  <script src="/app.js?v=16" defer></script>
+  <script src="/app.js?v=17" defer></script>
   <script src="/hawk-router.js?v=1" defer></script>
   <script src="/commute-router.js?v=3" defer></script>
   <script src="/remove-unrequested-address.js?v=1" defer></script>
@@ -44,15 +44,21 @@
   <script src="/driving-direction-clarity.js?v=1" defer></script>
   <script src="/analytics.js" defer></script>
   <script>
-    const simplifyAdventureLabels = () => {
+    const improveFirstImpression = () => {
       document.querySelectorAll('.adventure-tile strong').forEach(label => {
         const cleaned = label.textContent.replace(/^Adventure\s+\d+:\s*/i, '');
         if (cleaned !== label.textContent) label.textContent = cleaned;
       });
-      document.querySelectorAll('.adventure-tile span').forEach(subtitle => subtitle.remove());
       document.querySelectorAll('#app .eyebrow').forEach(label => {
         if (/^Adventure\s+\d+$/i.test(label.textContent.trim())) label.remove();
       });
+
+      const homeHeading = document.querySelector('#app h1');
+      const homeLede = document.querySelector('#app .lede');
+      if (location.pathname === '/' && homeHeading && homeLede) {
+        homeHeading.textContent = 'You had one simple plan. Then Tucson happened.';
+        homeLede.textContent = 'Pick a familiar Tucson problem, make the decision, and see how much worse it can get. You do not need to know Tucson to recognize what happens next.';
+      }
     };
 
     const correctMayorPronouns = () => {
@@ -64,7 +70,7 @@
     };
 
     const refreshUiFixes = () => {
-      simplifyAdventureLabels();
+      improveFirstImpression();
       correctMayorPronouns();
     };
     new MutationObserver(refreshUiFixes).observe(document.getElementById('app'), {childList:true, subtree:true});
