@@ -1,7 +1,7 @@
 "use strict";
 
 const adventures = [adventure1, adventure2, adventure3, adventure4, adventure5, adventure6, adventure7, adventure8, adventure9, adventure10, adventure11, adventure12, adventure14, adventure15, adventure16];
-const featuredSlugs = ["the-pothole-subway", "signs-of-trouble", "biosphere-2-misplaced-the-oxygen"];
+const featuredSlugs = ["the-pothole-subway", "the-wash-woke-up", "the-crossing-that-would-not-open"];
 let adventure = adventures.find((item) => location.pathname.includes(`/adventures/${item.slug}/`)) || adventure1;
 
 const app = document.querySelector("#app");
