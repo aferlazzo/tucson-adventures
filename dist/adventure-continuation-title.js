@@ -28,14 +28,11 @@
   document.head.append(style);
 
   function currentScene(slug) {
-    // The original adventures persist scene state in localStorage.
     try {
       const saved = JSON.parse(localStorage.getItem(`tucson:${slug}`));
       if (saved && Number.isInteger(saved.scene)) return saved.scene;
     } catch (_) {}
 
-    // Newer standalone routers keep their scene state in memory, so infer the
-    // current scene from the rendered scene heading and the registered adventure.
     const heading = document.querySelector("#app article.card > h2")?.textContent.trim();
     if (!heading) return 0;
     const adventures = [window.adventure14, window.adventure15, window.adventure16].filter(Boolean);
@@ -45,30 +42,29 @@
     return index >= 0 ? index : 0;
   }
 
-  function refreshContinuationTitle() {
+  function refreshAdventureTitle() {
     const match = location.pathname.match(/^\/adventures\/([^/]+)\/?/);
     const slug = match?.[1];
     const article = document.querySelector("#app article.card");
     if (!slug || !article || !titles[slug]) return;
 
     const scene = currentScene(slug);
-    const existing = article.querySelector(":scope > .adventure-context");
-    if (scene === 0) {
-      existing?.remove();
-      return;
-    }
-
-    if (existing) return;
+    let context = article.querySelector(":scope > .adventure-context");
     const sceneHeading = article.querySelector(":scope > h2");
     if (!sceneHeading) return;
 
-    const context = document.createElement("div");
-    context.className = "adventure-context";
-    context.innerHTML = `<p class="adventure-context-title"></p><span class="adventure-context-continued">continued</span>`;
+    if (!context) {
+      context = document.createElement("div");
+      context.className = "adventure-context";
+      context.innerHTML = `<p class="adventure-context-title"></p><span class="adventure-context-continued">continued</span>`;
+      sceneHeading.before(context);
+    }
+
     context.querySelector(".adventure-context-title").textContent = titles[slug];
-    sceneHeading.before(context);
+    const continued = context.querySelector(".adventure-context-continued");
+    continued.hidden = scene === 0;
   }
 
-  refreshContinuationTitle();
-  new MutationObserver(refreshContinuationTitle).observe(document.querySelector("#app"), { childList: true, subtree: true });
+  refreshAdventureTitle();
+  new MutationObserver(refreshAdventureTitle).observe(document.querySelector("#app"), { childList: true, subtree: true });
 })();
